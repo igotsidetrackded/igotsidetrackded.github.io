@@ -15,3 +15,8 @@ button a:hover{
 body {
     padding-top: 70px;
 }
+
+.navbar {
+    height: 36px;
+    min-height: 36px;
+}
