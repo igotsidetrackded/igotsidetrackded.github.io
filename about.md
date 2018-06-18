@@ -1,6 +1,6 @@
 ---
 layout: zymre
-title: about **SM**_d._
+title: about SMd.
 subtitle: all the answers
 ---
 
