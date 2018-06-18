@@ -32,7 +32,7 @@ navbar-links:
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/logo.png"
+avatar: "/media/logo_trebuchet.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -84,7 +84,7 @@ social-network-links:
 #  snapchat: deanat78
   instagram: simplesymbiosis
   flickr: schauebc
-  prisma: 2a91ac4e-7a2c-4a78-8f45-a8df56fc4f8a
+  prisma: simplesymbiosis
 #  youtube: user/deanat78
 #  spotify: yourname
 #  telephone: +14159998888
@@ -99,8 +99,6 @@ share-links-active:
   google: false
   linkedin: false
   instagram: true
-  flickr: true
-  prisma: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer

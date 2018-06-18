@@ -98,7 +98,7 @@ yelp:
 
 flickr:
   name: "Flickr"
-  baseUrl: "https://www.flickr.com/photos/"
+  baseUrl: "https://www.flickr.com/"
   icon: "fa-flickr"
 
 prisma:
