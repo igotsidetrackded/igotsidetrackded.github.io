@@ -9,17 +9,17 @@
 facebook:
   name: "Facebook"
   baseURL: "https://www.facebook.com/"
-  icon: "fa-facebook"
+  icon: "fa-facebook-square"
 
 github:
   name: "GitHub"
   baseURL: "https://github.com/"
-  icon: "fa-github"
+  icon: "fa-github-square"
 
 twitter:
   name: "Twitter"
   baseURL: "https://twitter.com/"
-  icon: "fa-twitter"
+  icon: "fa-twitter-square"
 
 reddit:
   name: "Reddit"
@@ -29,7 +29,7 @@ reddit:
 google-plus:
   name: "Google+"
   baseURL: "https://plus.google.com/"
-  icon: "fa-google-plus"
+  icon: "fa-google-plus-square"
 
 email:
   name: "Email me"
@@ -59,7 +59,7 @@ snapchat:
 instagram:
   name: "Instagram"
   baseURL: "https://www.instagram.com/"
-  icon: "fa-instagram"
+  icon: "instagram"
 
 youtube:
   name: "YouTube"
