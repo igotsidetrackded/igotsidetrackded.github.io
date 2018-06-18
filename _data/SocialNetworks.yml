@@ -104,4 +104,4 @@ flickr:
 prisma:
   name: "Prisma"
   baseURL: "https://prisma-ai.com/u/"
-  icon: "ion-paintbrush"
+  icon: "fa-paint-brush"
