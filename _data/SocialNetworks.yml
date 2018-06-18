@@ -98,10 +98,10 @@ yelp:
 
 flickr:
   name: "Flickr"
-  baseUrl: "https://www.flickt.com/photos/"
+  baseUrl: "https://www.flickr.com/photos/"
   icon: "fa-flickr"
 
 prisma:
   name: "Prisma"
   baseUrl: "https://prisma-ai.com/u/"
-  icon: "fa-paintbrush"
+  icon: "ion-paintbrush"
