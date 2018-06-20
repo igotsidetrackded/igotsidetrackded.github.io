@@ -5,4 +5,4 @@ subtitle: SCHAUER-MAYHEW DESIGNS SPECIALIZES IN INTERIOR DESIGN, FLORAL, AND PHO
 use-site-title: false
 ---
 
-| [![adam](/media/smd_adam.jpg "adam mayhew, interior designer/florist"){:height="50%" width="50%"}](sayril_interior.html) | [![bry](/media/smd_bry.jpg "bryan schauer, photographer/geek"){:height="50%" width="50%"}](photo) |
+| [![adam](/media/smd_adam.jpg "adam mayhew, interior designer/florist"){:height="375px" width="375px"}](interior) | [![bry](/media/smd_bry.jpg "bryan schauer, photographer/geek"){:height="375px" width="375px"}](photo) |
