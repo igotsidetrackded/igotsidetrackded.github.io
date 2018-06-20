@@ -2,6 +2,7 @@
 layout: zymre
 title: photography
 bigimg: /img/top-photo.jpg
+use-site-title: true
 ---
 
 | [![artsy](/media/artsy.jpg "artistic"){:class="img-responsive"}](https://flic.kr/s/aHsjU98CkE) | [![arch](/media/arch.jpg "architecture"){:class="img-responsive"}](https://flic.kr/s/aHsjU99FZF) | 
