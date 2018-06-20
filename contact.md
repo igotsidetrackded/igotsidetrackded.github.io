@@ -1,8 +1,6 @@
 ---
 layout: zymre
 title: contact
-subtitle: ways to get in touch
+subtitle: check out the links below!
 bigimg: /img/top-misc.jpg
 ---
-
-check out the links below!
