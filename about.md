@@ -1,7 +1,7 @@
 ---
 layout: zymre
 title: about SMd.
-subtitle: all the answers
+bigimg: /img/top-misc.jpg
 ---
 
 **Schauer-Mayhew** _designs_ specializes in interior design, floral, and photography services
