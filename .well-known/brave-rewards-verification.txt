@@ -1,4 +1,4 @@
 This is a Brave Rewards publisher verification file.
 
 Domain: schauermayhew.com
-Token: 2acaea15c3687a3f605605b922e2dc119f90f9549bc46aab88ba41e53bf2d79a
+Token: 4a36b462f3aa74c66344f5d0cefcd647b8a1fe4f8cfc3dec9ff01313d9ce4924
