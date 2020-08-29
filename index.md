@@ -1,6 +1,6 @@
 ---
 layout: zymre
-title: Schauer-Mayhew designs
+title: Schauer-Mayhew <i>designs</i>
 subtitle: SCHAUER-MAYHEW DESIGNS SPECIALIZES IN INTERIOR DESIGN, FLORAL, AND PHOTOGRAPHY SERVICES
 use-site-title: false
 ---
