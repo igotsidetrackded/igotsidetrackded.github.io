@@ -9,4 +9,6 @@ changes should be made to sayril.html
   -- cp sayril.html index.html; push/merge
   -- changes will be live at http://www.schauermayhew.com
 
+pink color: #ff00bb
+main font: poppins
 
