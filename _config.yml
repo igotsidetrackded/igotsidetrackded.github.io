@@ -78,7 +78,7 @@ social-network-links:
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-#  instagram: simplesymbiosis
+#  instagram: igotsidetrackded
 #  flickr: schauebc
 #  prisma: simplesymbiosis
 #  youtube: user/deanat78
@@ -105,8 +105,10 @@ url-pretty: "schauermayhew.com"  # eg. "deanattali.com/beautiful-jekyll"
 # Fill in your Google Analytics ID to track your website using GA
 gtag: "G-YKGHSETFP2"
 
+#google_analytics: "G-YKGHSETFP2"
+
 # Google Tag Manager ID
-#gtm: "UA-121637697-1"
+gtm: "GTM-K3WRN57"
 
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
