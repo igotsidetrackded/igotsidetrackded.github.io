@@ -78,7 +78,7 @@ social-network-links:
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-  instagram: igotsidetrackded
+#  instagram: igotsidetrackded
 #  flickr: schauebc
 #  prisma: simplesymbiosis
 #  youtube: user/deanat78
@@ -94,7 +94,7 @@ share-links-active:
   facebook: false
   google: false
   linkedin: false
-  instagram: true
+  instagram: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
@@ -103,8 +103,9 @@ url-pretty: "schauermayhew.com"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: "UA-121637697-1"
-google_analytics: "G-YKGHSETFP2"
+gtag: "G-YKGHSETFP2"
+
+#google_analytics: "G-YKGHSETFP2"
 
 # Google Tag Manager ID
 gtm: "GTM-K3WRN57"
