@@ -7,5 +7,7 @@ _site
 .DS_Store
 Thumbs.db
 ehthumbs.db
-TODO
-old/
+
+Gemfile.lock
+
+beautiful-jekyll-theme-*.gem

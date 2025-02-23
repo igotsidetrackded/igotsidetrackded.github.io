@@ -1,7 +1,7 @@
 ---
 layout: zymre
 title: photography
-bigimg: /img/top-photo.jpg
+bigimg: /assets/img/top-photo.jpg
 use-site-title: true
 ---
 
