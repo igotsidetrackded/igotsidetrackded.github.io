@@ -1,5 +1,7 @@
 # --- General options --- #
 
+remote_theme: daattali/beautiful-jekyll@6.0.1
+
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
@@ -68,7 +70,7 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
 #  rss: true
-  email: "photo.schauermayhew@gmail.com"
+  email: "bryan@schauermayhew.com"
 #  facebook: schauermayhew
   github: igotsidetrackded
 #  twitter: schauermayhew
