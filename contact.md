@@ -2,5 +2,5 @@
 layout: zymre
 title: contact
 subtitle: check out the links below!
-bigimg: /img/top-misc.jpg
+bigimg: /assets/img/top-misc.jpg
 ---

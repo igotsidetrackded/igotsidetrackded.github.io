@@ -1,7 +1,7 @@
 ---
 layout: zymre
 title: interior design
-bigimg: /img/top-interior.jpg
+bigimg: /assets/img/top-interior.jpg
 use-site-title: true
 author.name: Addam Mayhew
 social-network-links.email: addam@schauermayhew.com

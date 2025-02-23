@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gemspec
+
 gem "github-pages", '227', group: :jekyll_plugins
 
 # enable tzinfo-data for local build
