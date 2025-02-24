@@ -1,6 +1,6 @@
 ---
 layout: zymre
-title: Schauer-Mayhew <i>designs</i>
+title: Schauer-Mayhew _designs_
 subtitle: SCHAUER-MAYHEW DESIGNS SPECIALIZES IN INTERIOR DESIGN AND PHOTOGRAPHY
 ---
 
