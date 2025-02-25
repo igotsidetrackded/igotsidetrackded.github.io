@@ -4,16 +4,16 @@ title: about SM<i>d.</i>
 cover-img: /assets/img/top-misc.jpg
 ---
 
-## **Schauer-Mayhew** *designs* specializes in interior design, floral, and photography services  
+## **Schauer-Mayhew** *designs* specializes in interior design, floral, and photography services
 
-### Addam's interior design services include  
+### Addam's interior design services include<br>
 - space planning
 - color/paint/material selection
 - project management
 - staging
-- much more  
+- much more
 
-### Addam's floral services include arrangements and decor for celebrations, dinners, and other gatherings  
+### Addam's floral services include arrangements and decor for celebrations, dinners, and other gatherings
 
-### Bryan's enjoys architecture, artistic, black & white, and nature photography  
+### Bryan enjoys architecture, artistic, black & white, and nature photography
 
