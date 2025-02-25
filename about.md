@@ -1,6 +1,6 @@
 ---
 layout: zymre
-title: about SM*d.*
+title: about SM<i>d.</i>
 cover-img: /assets/img/top-misc.jpg
 ---
 
