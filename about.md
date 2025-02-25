@@ -1,10 +1,10 @@
 ---
 layout: zymre
-title: about SMd.
+title: about SM*d.*
 cover-img: /assets/img/top-misc.jpg
 ---
 
-**Schauer-Mayhew** _designs_ specializes in  
+**Schauer-Mayhew** *designs* specializes in
 interior design, floral, and photography services  
 
 Addam's interior design services include

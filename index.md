@@ -1,6 +1,6 @@
 ---
 layout: zymre
-title: Schauer-Mayhew designs
+title: Schauer-Mayhew *designs*
 subtitle: SMd. SPECIALIZES IN INTERIOR DESIGN AND PHOTOGRAPHY
 ---
 
