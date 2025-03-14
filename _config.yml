@@ -50,9 +50,12 @@ title-img: /media/logo_trebuchet.png
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   emaila: "addam@schauermayhew.com"
+  linkedina: addam-mayhew-8669b123
   emailb: "bryan@schauermayhew.com"
+  linkedinb: schauebc
   github: igotsidetrackded
-  linkedin: schauebc
+  flickr: schauebc
+  bluesky: igotsidetrackded
 #  rss: true  # remove this line if you don't want to show an RSS link at the bottom
 #  facebook: deanattali
 #  twitter: daattali

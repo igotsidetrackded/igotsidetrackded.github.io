@@ -163,6 +163,30 @@
   </li>
   {%- endif -%}
 
+  {%- if network[0] == "linkedina" -%}
+  <li class="list-inline-item">
+    <a href="https://linkedin.com/in/{{ network[1] }}" title="LinkedIn">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Addam on LinkedIn</span>
+   </a>
+  </li>
+  {%- endif -%}
+
+  {%- if network[0] == "linkedinb" -%}
+  <li class="list-inline-item">
+    <a href="https://linkedin.com/in/{{ network[1] }}" title="LinkedIn">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Bryan on LinkedIn</span>
+   </a>
+  </li>
+  {%- endif -%}
+
   {%- if network[0] == "xing" -%}
   <li class="list-inline-item">
     <a href="https://www.xing.com/profile/{{ network[1] }}" title="Xing">
@@ -207,6 +231,18 @@
         <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
       </span>
       <span class="sr-only">Instagram</span>
+   </a>
+  </li>
+  {%- endif -%}
+
+  {%- if network[0] == "flickr" -%}
+  <li class="list-inline-item">
+    <a href="https://www.flickr.com/photos/{{ network[1] }}" title="Flickr">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-flickr fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Flickr</span>
    </a>
   </li>
   {%- endif -%}
