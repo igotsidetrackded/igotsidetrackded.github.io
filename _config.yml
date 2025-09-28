@@ -12,15 +12,11 @@ primary_color: "#b22222" # Addam's red
 secondary_color: "#888589" # Bryan's accent (grey)
 
 # Navigation
-navigation:
-  - title: "Interior Design"
-    url: /interior
-  - title: "Photography"
-    url: /photo
-  - title: "About"
-    url: /about
-  - title: "Contact"
-    url: /contact
+navbar-links:
+  "Interior Design": "/interior"
+  "Photography": "/photo"
+  "About": "/about"
+  "Contact": "/contact"
 
 # Social links
 social-network-links:
