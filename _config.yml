@@ -23,11 +23,11 @@ social-network-links:
   # flickr: "https://flickr.com/schauebc"
   # bluesky: "https://bsky.app/profile/igotsidetrackded.bsky.social"
 
-author:
-  name: "Addam Mayhew"
-  email: "addam@schauermayhew.com"
-  bio: "Interior Designer, Freelancer, Creative"
-  avatar: "/assets/interior/addam-avatar.jpg"
+#author:
+  #name: "Addam Mayhew"
+  #email: "addam@schauermayhew.com"
+  #bio: "Interior Designer, Freelancer, Creative"
+  #avatar: "/assets/interior/addam-avatar.jpg"
 
 plugins:
   - jekyll-feed
