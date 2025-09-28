@@ -1,5 +1,3 @@
-<!-- photo.md -->
-
 ---
 layout: page
 title: "Photography by Bryan Schauer"

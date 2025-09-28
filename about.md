@@ -1,5 +1,3 @@
-<!-- about.md -->
-
 ---
 layout: page
 title: "About Schauer-Mayhew designs"
