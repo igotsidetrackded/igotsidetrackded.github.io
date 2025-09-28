@@ -1,39 +1,34 @@
 # _config.yml
 
 title: Schauer-Mayhew designs
-description: >-
+description: >
   Interior Design by Addam Mayhew. Photography by Bryan Schauer. SMd. specializes in creative interiors and visual storytelling.
 url: "https://www.schauermayhew.com"
 baseurl: "" # No subdirectory
 remote_theme: daattali/beautiful-jekyll
 
-# Branding colors
-primary_color: "#b22222" # Addam's red
-secondary_color: "#888589" # Bryan's accent (grey)
+# Brand color for navbar and accents
+brand-color: "#b22222"
 
-# Navigation
 navbar-links:
-  "Interior Design": "/interior"
-  "Photography": "/photo"
-  "About": "/about"
-  "Contact": "/contact"
+  "Interior Design": "interior"
+  "Photography": "photo"
+  "About": "about"
+  "Contact": "contact"
 
-# Social links
 social-network-links:
   email: "addam@schauermayhew.com"
   linkedin: "https://www.linkedin.com/in/addam-mayhew-8669b123/"
-#  github: "https://github.com/igotsidetrackded"
-#  flickr: "https://flickr.com/schauebc"
-#  bluesky: "https://bsky.app/profile/igotsidetrackded.bsky.social"
+  # github: "https://github.com/igotsidetrackded"
+  # flickr: "https://flickr.com/schauebc"
+  # bluesky: "https://bsky.app/profile/igotsidetrackded.bsky.social"
 
-# Author info
 author:
   name: "Addam Mayhew"
   email: "addam@schauermayhew.com"
   bio: "Interior Designer, Freelancer, Creative"
   avatar: "/assets/interior/addam-avatar.jpg"
 
-# Plugins (if needed)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -41,7 +36,6 @@ plugins:
 gtag: "G-YKGHSETFP2"
 gtm: "GTM-K3WRN57"
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -54,14 +48,12 @@ defaults:
     values:
       layout: "page"
 
-# Exclude files from build
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
 
-# Other settings
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
