@@ -1,0 +1,10 @@
+main:
+  - title: "Interior Design"
+    url: /projects/
+  - title: "Photography"
+    url: /photo/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+
