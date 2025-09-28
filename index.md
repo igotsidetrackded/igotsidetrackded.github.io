@@ -6,7 +6,7 @@ title: "Addam Mayhew – Interior Design Freelancing"
 subtitle: "Transforming spaces with creativity and passion"
 ---
 
-![Addam Mayhew Interior Design](assets/interior/hero.jpg)
+![Addam Mayhew Interior Design](/assets/interior/hero.jpg)
 
 Welcome to **Schauer-Mayhew designs** —  
 Addam Mayhew specializes in modern, creative interior design for homes and businesses.
@@ -15,7 +15,7 @@ Addam Mayhew specializes in modern, creative interior design for homes and busin
   <a href="/interior" style="background:#b22222;color:#fff;padding:1em 2em;border-radius:4px;text-decoration:none;font-weight:bold;">View Interior Design Portfolio</a>
 </div>
 
----
+<hr>
 
 ### About Addam
 
@@ -27,7 +27,7 @@ With a passion for transforming spaces, Addam brings a unique blend of creativit
 
 [Contact Addam](mailto:addam@schauermayhew.com)
 
----
+<hr>
 
 <div style="margin-top:3em;">
   <h3 style="font-weight:normal;color:#888;">Looking for photography?</h3>
