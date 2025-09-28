@@ -1,16 +1,33 @@
 ---
-# empty front matter so Jekyll processes this SCSS
+# Front matter enables Jekyll to process SCSS
 ---
 
-@import "minimal-mistakes/skins/default"; // or "air", "contrast", etc.
-@import "minimal-mistakes"; 
+@import "minimal-mistakes/skins/default";
+@import "minimal-mistakes";
 
-// Brand overrides
+// Brand color override
 :root {
   --primary-color: #b22222;
 }
 
+/* Simple responsive gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
 .gallery img {
+  width: 100%;
+  height: auto;
   border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(178,34,34,0.18);
 }
 

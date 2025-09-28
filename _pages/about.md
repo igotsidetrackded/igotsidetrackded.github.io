@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "About Schauer-Mayhew designs"
 subtitle: "Meet Addam and Bryan"
 permalink: /about/
