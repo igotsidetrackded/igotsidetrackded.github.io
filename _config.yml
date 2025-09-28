@@ -5,7 +5,7 @@ description: >
   Interior Design by Addam Mayhew. Photography by Bryan Schauer. SMd. specializes in creative interiors and visual storytelling.
 url: "https://www.schauermayhew.com"
 baseurl: "" # No subdirectory
-remote_theme: daattali/beautiful-jekyll
+remote_theme: mmistakes/minimal-mistakes
 
 # Brand color for navbar and accents
 brand-color: "#b22222"
@@ -31,11 +31,22 @@ author: Bryan Schauer
   #avatar: "/assets/interior/addam-avatar.jpg"
 
 plugins:
+  - jekyll-include-cache
   - jekyll-feed
   - jekyll-seo-tag
 
 gtag: "G-YKGHSETFP2"
 gtm: "GTM-K3WRN57"
+
+# Collections for portfolio
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Navigation (Minimal Mistakes uses navigation.yml, but topnav can be inline too)
+include: ["_pages"]
+permalink: pretty
 
 defaults:
   - scope:

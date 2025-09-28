@@ -1,0 +1,16 @@
+---
+# empty front matter so Jekyll processes this SCSS
+---
+
+@import "minimal-mistakes/skins/default"; // or "air", "contrast", etc.
+@import "minimal-mistakes"; 
+
+// Brand overrides
+:root {
+  --primary-color: #b22222;
+}
+
+.gallery img {
+  border-radius: 12px;
+}
+
