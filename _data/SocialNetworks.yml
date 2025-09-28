@@ -93,7 +93,7 @@ twitch:
 
 yelp:
   name: "Yelp"
-  baseURL: "https://{{ site.author.yelp }}.yelp.com"
+  baseURL: "https://www.yelp.com"
   icon: "fa-yelp"
 
 flickr:
