@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "Contact"
 subtitle: "Get in touch with Addam or Bryan"
 permalink: /contact/
