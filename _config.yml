@@ -5,7 +5,7 @@ description: >-
   Interior Design by Addam Mayhew. Photography by Bryan Schauer. SMd. specializes in creative interiors and visual storytelling.
 url: "https://www.schauermayhew.com"
 baseurl: "" # No subdirectory
-theme: beautiful-jekyll-theme
+remote_theme: daattali/beautiful-jekyll@6.0.1
 
 # Branding colors
 primary_color: "#b22222" # Addam's red
