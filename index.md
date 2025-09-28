@@ -1,5 +1,3 @@
-<!-- index.md -->
-
 ---
 layout: home
 title: "Addam Mayhew – Interior Design Freelancing"

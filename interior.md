@@ -1,5 +1,3 @@
-<!-- interior.md -->
-
 ---
 layout: page
 title: "Interior Design by Addam Mayhew"
