@@ -7,9 +7,6 @@ url: "https://www.schauermayhew.com"
 baseurl: "" # No subdirectory
 remote_theme: mmistakes/minimal-mistakes
 
-# Brand color for navbar and accents
-brand-color: "#b22222"
-
 navbar-links:
   "Interior Design": "interior"
   "Photography": "photo"
