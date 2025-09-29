@@ -47,6 +47,10 @@ defaults:
     values:
       layout: single
       classes: wide
+  - scope:
+      path: ""
+    values:
+      custom_css: /assets/css/custom.css
 
 # Navigation uses _data/navigation.yml
 include: ["_pages"]
