@@ -10,20 +10,20 @@ layout: archive
 - [{{ project.title }}]({{ project.url }})
 {% endfor %}
 
-![Addam Mayhew Interior Design](assets/interior/portfolio-hero.jpg)
+![Addam Mayhew Interior Design](/assets/interior/portfolio_hero.jpg)
 
 ## Portfolio
 
 Explore some of Addam’s recent interior design projects:
 
-<div class="portfolio-gallery">
+<div class="gallery">
   <img src="/assets/interior/project1.jpg" alt="Living Room Redesign" />
   <img src="/assets/interior/project2.jpg" alt="Modern Kitchen" />
   <img src="/assets/interior/project3.jpg" alt="Office Space Transformation" />
   <img src="/assets/interior/project4.jpg" alt="Creative Studio" />
 </div>
 
-[Full Portfolio](/alm_portfolio.html)
+[Full Portfolio](/alm_portfolio)
 
 ## Services
 
