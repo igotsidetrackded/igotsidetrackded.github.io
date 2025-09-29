@@ -2,6 +2,7 @@
 title: "Living Room Redesign – SW DC"
 excerpt: "Warm, layered textures with modern lines in a compact space."
 layout: single
+collection: projects
 classes: wide
 header:
   overlay_image: /assets/interior/living_room_hero.jpg
