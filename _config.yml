@@ -13,7 +13,7 @@ remote_theme: mmistakes/minimal-mistakes
 logo: "/assets/logos/logo_trebuchet.png"
 author:
   name: "Addam Lee Mayhew"
-  avatar: "/assets/images/addam_avatar.jpg"
+  avatar: "/assets/interior/addam_avatar.jpg"
   bio: "interior designer. dog lover. greenthumb." # Note: Markdown is allowed
   location: "Washington, DC"
   links:
