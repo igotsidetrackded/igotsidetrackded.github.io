@@ -8,7 +8,7 @@ author_profile: true
 {% include feature_row id="portfolio" type="left" %}
 
 {% for project in site.projects %}
-- [{{ project.title }}]({{ project.url }})
+- [{{ project.title }}]({{ project.url | relative_url }})
 {% endfor %}
 
 ![Addam Mayhew Interior Design](/assets/interior/portfolio_hero.jpg)
