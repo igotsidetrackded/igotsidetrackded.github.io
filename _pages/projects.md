@@ -23,7 +23,7 @@ Explore some of Addam’s recent interior design projects:
   <img src="/assets/interior/project4.jpg" alt="Creative Studio" />
 </div>
 
-[Full Portfolio](/alm_portfolio)
+[Full Portfolio](/alm-portfolio)
 
 ## Services
 
