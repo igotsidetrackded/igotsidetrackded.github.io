@@ -10,10 +10,9 @@ baseurl: "" # root
 remote_theme: mmistakes/minimal-mistakes
 
 # interior design projects
-site:
-  projects:
-    - title: Southwest DC Condo - Living Room
-      url: /projects/living-room
+projects:
+  - title: "Southwest DC Condo - Living Room"
+    url: /projects/living-room
 
 # additional config options from https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 logo: "/assets/logos/logo_trebuchet.png"
