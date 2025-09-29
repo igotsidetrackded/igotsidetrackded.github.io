@@ -1,0 +1,13 @@
+/* assets/css/custom.css */
+
+.my-header-btn {
+  background-color: #b22222;
+  border-color: #888589;
+  color: #ffffff;
+}
+.my-header-btn:hover,
+.my-header-btn:focus {
+  background-color: #888589;
+  border-color: #b22222;
+}
+

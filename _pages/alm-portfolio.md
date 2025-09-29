@@ -6,6 +6,7 @@ header:
   overlay_image: /assets/interior/kitchen_cad_ai_gen.jpg
   overlay_filter: 0.25
 excerpt: "A curated selection of Addam’s interior design work."
+author_profile: true
 ---
 
 This portfolio presents selected interior design projects, highlighting space planning, material palettes, and finished environments.
