@@ -9,6 +9,10 @@ baseurl: "" # root
 # Minimal Mistakes remote theme
 remote_theme: mmistakes/minimal-mistakes
 
+# additional config options from https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+logo: "/assets/logos/logo_trebuchet.png"
+
+
 # Plugins supported by GitHub Pages
 plugins:
   - jekyll-include-cache

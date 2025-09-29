@@ -12,7 +12,7 @@ header:
       url: mailto:addam@schauermayhew.com
 ---
 
-Welcome to Schauer-Mayhew designs. Addam specializes in modern, creative interior design for homes and businesses.
+<!--Welcome to Schauer-Mayhew designs. Addam specializes in modern, creative interior design for homes and businesses.
 
-[Photography by Bryan →](/photo/)
+[Photography by Bryan →](/photo/)-->
 
