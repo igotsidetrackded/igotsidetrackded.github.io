@@ -3,7 +3,7 @@ layout: splash
 title: "Addam Mayhew – Interior Design"
 subtitle: "Transforming spaces with creativity and passion"
 header:
-  overlay_image: /assets/interior/addam_avatar.jpg
+  overlay_image: /assets/interior/kitchen_cad_ai_gen.png
   overlay_filter: 0.2
   actions:
     - label: "View Portfolio"
