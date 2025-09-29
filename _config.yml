@@ -27,7 +27,7 @@ show_feed: false
 # Plugins supported by GitHub Pages
 plugins:
   - jekyll-include-cache
-  - jekyll-feed
+  #- jekyll-feed
   - jekyll-seo-tag
 
 # Collections
