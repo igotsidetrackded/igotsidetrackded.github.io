@@ -20,14 +20,13 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/addam-mayhew-8669b123/"
-
-# Turn off feed link in footer
-show_feed: false
+atom_feed:
+  hide: true
 
 # Plugins supported by GitHub Pages
 plugins:
   - jekyll-include-cache
-  #- jekyll-feed
+  - jekyll-feed
   - jekyll-seo-tag
 
 # Collections
