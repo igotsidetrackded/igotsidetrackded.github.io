@@ -8,10 +8,8 @@ header:
   actions:
     - label: "View Portfolio"
       url: /projects/
-      class: "btn btn--primary my-header-btn"
     - label: "Contact Addam"
       url: mailto:addam@schauermayhew.com
-      class: "btn btn--primary my-header-btn"
 ---
 
 Welcome to Schauer-Mayhew designs. Addam specializes in modern, creative interior design for homes and businesses.
