@@ -8,7 +8,9 @@ header:
   overlay_image: /assets/photography/portfolio_hero.jpg
   overlay_filter: 0.2
 gallery:
-  - url: /assets/photography/arch.jpg
+  - image_path: /assets/photography/arch.jpg
+    url: /assets/photography/arch.jpg
+    alt: "photos of architecture"
     caption: "Architecture"
   - url: /assets/photography/artsy.jpg
     caption: "Artistic"
