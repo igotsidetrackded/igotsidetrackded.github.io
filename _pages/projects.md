@@ -39,7 +39,8 @@ Explore some of Addam’s recent interior design projects:
 
 ## Testimonials
 
-Coming soon...
+Coming soon...  
+
 <!--
 > “Addam transformed our home into a space we truly love. His vision and attention to detail are unmatched.”  
 > <span style="color:#b22222;">— Client, Brooklyn NY</span>
