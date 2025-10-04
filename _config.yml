@@ -11,15 +11,6 @@ remote_theme: mmistakes/minimal-mistakes
 
 # additional config options from https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 logo: "/assets/logos/logo_trebuchet.png"
-author:
-  name: "Addam Lee Mayhew"
-  avatar: "/assets/interior/addam_avatar.jpg"
-  bio: "interior designer. dog lover. greenthumb." # Note: Markdown is allowed
-  location: "Washington, DC"
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/addam-mayhew-8669b123/"
 atom_feed:
   hide: true
 

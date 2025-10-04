@@ -1,0 +1,30 @@
+addam:
+  name        : "Addam Lee Mayhew"
+  bio         : "interior designer. dog lover. greenthumb."
+  avatar      : "/assets/interior/addam_avatar.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:addam@schauermayhew.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-square-linkedin"
+      url: "https://www.linkedin.com/in/addam-mayhew-8669b123/"
+
+bryan:
+  name        : "Bryan Schauer"
+  bio         : "photographer. hiker. yogi. beagle dad."
+  avatar      : "/assets/photography/bryan_avatar.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:bryan@schauermayhew.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-square-linkedin"
+      url: "https://linkedin.com/in/schauebc"
+    - label: "Flickr"
+      icon: "fab fa-fw fa-flickr"
+      url: "https://flickr.com/schauebc"
+    - label: "Bluesky"
+      icon: "fab fa-fw fa-sqaure-bluesky"
+      url: "https://bsky.app/profile/igotsidetrackded.bsky.social"
+
