@@ -7,6 +7,7 @@ classes: wide
 author_profile: true
 author: addam
 header:
+  overlay_color: "#b22222"
   caption: "F St Kitchen & Bath"
 gallery:
   - image_path: /assets/interior/f_st_kitchen_doorway.png
