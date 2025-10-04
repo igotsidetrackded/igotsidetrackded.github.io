@@ -36,5 +36,5 @@ See more of Bryan’s work on [Flickr](https://flickr.com/schauebc) and [Bluesky
 
 For photography inquiries, [email Bryan](mailto:bryan@schauermayhew.com).
 
-I'm a DevSecOps Engineer in my day-to-day, check out my resumé [here](/bry-resume)
+I'm a DevSecOps Engineer in my day-to-day, check out my [resumé](/bry-resume)
 
