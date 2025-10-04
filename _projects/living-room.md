@@ -7,8 +7,7 @@ classes: wide
 author_profile: true
 author: addam
 header:
-  overlay_image: /assets/interior/living_room_hero.jpg
-  overlay_filter: 0.2
+  overlay_color: "#b22222"
   caption: "SW Condo Living Room"
 gallery:
   - image_path: /assets/interior/living_room_demo_thumb.jpg
