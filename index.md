@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Addam Mayhew – Interior Design"
+title: "Addam Mayhew – Interior Designer"
 subtitle: "Transforming spaces with creativity and passion"
 header:
   overlay_image: /assets/interior/kitchen_cad_ai_gen.png
@@ -14,5 +14,5 @@ header:
 
 Welcome to Schauer-Mayhew designs. Addam specializes in modern, creative interior design for homes and businesses.
 
-[Photography by Bryan →](/photo/)
+[Check out Bryan's photography →](/photo/)
 
