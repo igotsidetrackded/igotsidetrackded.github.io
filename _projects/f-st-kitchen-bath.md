@@ -6,6 +6,8 @@ collection: projects
 classes: wide
 author_profile: true
 author: addam
+header:
+  caption: "F St Kitchen & Bath"
 gallery:
   - image_path: /assets/interior/f_st_kitchen_doorway.png
     url: /assets/interior/f_st_kitchen_doorway.png
