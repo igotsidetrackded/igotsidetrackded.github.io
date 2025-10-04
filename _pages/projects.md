@@ -2,6 +2,7 @@
 title: "Interior Design Portfolio"
 permalink: /projects/
 layout: archive
+author_profile: true
 author: addam
 ---
 

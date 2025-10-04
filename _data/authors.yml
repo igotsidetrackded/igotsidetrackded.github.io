@@ -2,6 +2,7 @@ addam:
   name        : "Addam Lee Mayhew"
   bio         : "interior designer. dog lover. greenthumb."
   avatar      : "/assets/interior/addam_avatar.jpg"
+  location    : "Washington, DC"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -14,6 +15,7 @@ bryan:
   name        : "Bryan Schauer"
   bio         : "photographer. hiker. yogi. beagle dad."
   avatar      : "/assets/photography/bryan_avatar.jpg"
+  location    : "Washington, DC"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -25,6 +27,6 @@ bryan:
       icon: "fab fa-fw fa-flickr"
       url: "https://flickr.com/schauebc"
     - label: "Bluesky"
-      icon: "fab fa-fw fa-sqaure-bluesky"
+      icon: "fab fa-fw fa-square-bluesky"
       url: "https://bsky.app/profile/igotsidetrackded.bsky.social"
 
