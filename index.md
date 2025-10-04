@@ -4,7 +4,7 @@ title: "Addam Mayhew – Interior Designer"
 subtitle: "Transforming spaces with creativity and passion"
 header:
   overlay_image: /assets/interior/kitchen_cad_ai_gen.png
-  overlay_filter: 0.2
+  overlay_filter: rgba(178,34,34, 0.5)
   actions:
     - label: "View Portfolio"
       url: /projects/
