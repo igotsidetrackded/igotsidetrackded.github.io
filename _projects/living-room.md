@@ -11,13 +11,11 @@ header:
   overlay_filter: 0.2
   caption: "SW Condo Living Room"
 gallery:
-  - image_path: /assets/interior/living_room_demo.jpg
-    thumbnail: /assets/interior/project1.jpg
+  - image_path: /assets/interior/living_room_demo_thumb.jpg
     url: /assets/interior/living_room_demo.jpg
     alt: "living room demolition, carpet torn up, concrete floors"
     caption: "Demolition"
-  - image_path: /assets/interior/living_room_final.jpg
-    thumbnail: /assets/interior/project2.jpg
+  - image_path: /assets/interior/living_room_final_thumb.jpg
     url: /assets/interior/living_room_final.jpg
     alt: "fully furnished modern-styled living room"
     caption: "Final product"
