@@ -6,7 +6,7 @@ author_profile: true
 author: bryan
 header:
   overlay_image: /assets/photography/portfolio_hero.jpg
-  overlay_filter: 0.2
+  overlay_filter: rgba(178,34,34, 0.5)
 gallery:
   - image_path: /assets/photography/arch.jpg
     url: /assets/photography/arch.jpg
