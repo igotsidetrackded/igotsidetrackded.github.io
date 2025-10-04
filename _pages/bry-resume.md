@@ -1,13 +1,12 @@
 ---
-title: "Schauer Resumé"
 permalink: /bry-resume/
 layout: single
-excerpt: "Bryan's DevSecOps resumé."
 ---
 
 # Bryan Schauer
 Lead TechOps Engineer | DevSecOps | Cloud Computing  
-Washington, DC • bryan.schauer@gmail.com • [LinkedIn](https://www.linkedin.com/in/schauebc) • [GitHub](https://www.github.com/igotsidetrackded) • [Personal Website](https://www.schauermayhew.com/photo)
+Washington, DC • bryan.schauer@gmail.com 
+[LinkedIn](https://www.linkedin.com/in/schauebc) • [GitHub](https://www.github.com/igotsidetrackded) • [Personal Website](https://www.schauermayhew.com/photo)
 
 ---
 
@@ -111,6 +110,7 @@ Results:
 ---
 
 ## Certifications, Audits & Training
+- Proofpoint Certified Ransomware Specialist 2025
 - SOC 2 audit support and evidence collection (Decile)
 - AWS cost optimization practices (Savings Plans, Reservations)
 - Incident response participation (annual exercises)
