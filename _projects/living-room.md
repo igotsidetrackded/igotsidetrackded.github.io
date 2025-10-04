@@ -11,14 +11,18 @@ header:
   overlay_filter: 0.2
   caption: "SW Condo Living Room"
 gallery:
-  - url: /assets/interior/living_room_demo.jpg
+  - image_path: /assets/interior/living_room_demo.jpg
+    url: /assets/interior/living_room_demo.jpg
+    alt: "living room demolition, carpet torn up, concrete floors"
     caption: "Demolition"
-  - url: /assets/interior/living_room_final.jpg
+  - image_path: /assets/interior/living_room_final.jpg
+    url: /assets/interior/living_room_final.jpg
+    alt: "fully furnished modern-styled living room"
     caption: "Final product"
 ---
 
 ## Approach
 Brief narrative: goals, constraints, materials, and spatial planning.
 
-{% include gallery caption="Gallery" %}
+{% include gallery id="gallery" %}
 
