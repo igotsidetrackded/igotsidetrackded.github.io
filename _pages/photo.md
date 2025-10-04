@@ -12,11 +12,17 @@ gallery:
     url: /assets/photography/arch.jpg
     alt: "photos of architecture"
     caption: "Architecture"
-  - url: /assets/photography/artsy.jpg
+  - image_path: /assets/photography/artsy.jpg
+    url: /assets/photography/artsy.jpg
+    alt: "artistic photos"
     caption: "Artistic"
-  - url: /assets/photography/bw.jpg
+  - image_path: /assets/photography/bw.jpg
+    url: /assets/photography/bw.jpg
+    alt: "black and white photos"
     caption: "Black & White"
-  - url: /assets/photography/nature.jpg
+  - image_path: /assets/photography/nature.jpg
+    url: /assets/photography/nature.jpg
+    alt: "photos of nature"
     caption: "Nature"
 ---
 
@@ -24,7 +30,7 @@ gallery:
 
 Bryan is a visual storyteller with a passion for capturing the essence of spaces and moments. His work has been featured in friends' and families' homes.
 
-{% include gallery id="gallery" caption="Gallery" %}
+{% include gallery id="gallery" %}
 
 See more of Bryan’s work on [Flickr](https://flickr.com/schauebc) and [Bluesky](https://bsky.app/profile/igotsidetrackded.bsky.social).
 
