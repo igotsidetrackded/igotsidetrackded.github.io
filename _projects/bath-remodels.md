@@ -1,5 +1,5 @@
 ---
-title: "Living Room Redesign – SW DC"
+title: "Various Bathroom Remodels"
 excerpt: "Warm, layered textures with modern lines in a compact space."
 layout: single
 collection: projects
@@ -7,9 +7,8 @@ classes: wide
 author_profile: true
 author: addam
 header:
-  overlay_image: /assets/interior/living_room_hero.jpg
-  overlay_filter: 0.2
-  caption: "SW Condo Living Room"
+  overlay_color: "#b22222"
+  caption: "Bathroom Remodels"
 gallery:
   - image_path: /assets/interior/living_room_demo_thumb.jpg
     url: /assets/interior/living_room_demo.jpg
