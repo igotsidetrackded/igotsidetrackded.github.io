@@ -5,7 +5,7 @@ layout: single
 ---
 
 Lead TechOps Engineer | DevSecOps | Cloud Computing  
-Washington, DC • bryan.schauer@gmail.com 
+Washington, DC • bryan.schauer@gmail.com  
 [LinkedIn](https://www.linkedin.com/in/schauebc) • [GitHub](https://www.github.com/igotsidetrackded) • [Personal Website](https://www.schauermayhew.com/photo)
 
 ---
