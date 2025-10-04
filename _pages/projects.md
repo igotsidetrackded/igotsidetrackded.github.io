@@ -12,6 +12,7 @@ author: addam
 - [{{ project.title }}]({{ project.url | relative_url }})
 {% endfor %}
 
+<!--
 ![Addam Mayhew Interior Design](/assets/interior/portfolio_hero.jpg)
 
 ## Portfolio
@@ -24,8 +25,9 @@ Explore some of Addam’s recent interior design projects:
   <img src="/assets/interior/project3.jpg" alt="Office Space Transformation" />
   <img src="/assets/interior/project4.jpg" alt="Creative Studio" />
 </div>
+-->
 
-[Full Portfolio](/alm-portfolio)
+[Portfolio Slide Deck](/alm-portfolio)
 
 ## Services
 
@@ -37,11 +39,14 @@ Explore some of Addam’s recent interior design projects:
 
 ## Testimonials
 
+Coming soon...
+<!--
 > “Addam transformed our home into a space we truly love. His vision and attention to detail are unmatched.”  
 > <span style="color:#b22222;">— Client, Brooklyn NY</span>
 
 > “Professional, creative, and easy to work with. Highly recommended!”  
 > <span style="color:#b22222;">— Client, Manhattan NY</span>
+-->
 
 ## Contact
 
