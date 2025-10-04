@@ -2,6 +2,7 @@
 layout: single
 title: "Photography by Bryan"
 permalink: /photo/
+author_profile: true
 author: bryan
 header:
   overlay_image: /assets/photography/portfolio_hero.jpg
@@ -21,7 +22,7 @@ gallery:
 
 Bryan is a visual storyteller with a passion for capturing the essence of spaces and moments. His work has been featured in friends' and families' homes.
 
-{% include gallery caption="Gallery" %}
+{% include gallery id="gallery" caption="Gallery" %}
 
 See more of Bryan’s work on [Flickr](https://flickr.com/schauebc) and [Bluesky](https://bsky.app/profile/igotsidetrackded.bsky.social).
 
