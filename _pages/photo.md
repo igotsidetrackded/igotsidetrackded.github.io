@@ -5,17 +5,22 @@ permalink: /photo/
 header:
   overlay_image: /assets/photography/portfolio_hero.jpg
   overlay_filter: 0.2
+gallery:
+  - url: /assets/photography/arch.jpg
+    caption: "Architecture"
+  - url: /assets/photography/artsy.jpg
+    caption: "Artistic"
+  - url: /assets/photography/bw.jpg
+    caption: "Black & White"
+  - url: /assets/photography/nature.jpg
+    caption: "Nature"
 ---
-
-<div class="gallery">
-  <img src="/assets/photography/photo1.jpg" alt="Interior detail">
-  <img src="/assets/photography/photo2.jpg" alt="Urban landscape">
-  <img src="/assets/photography/photo3.jpg" alt="Portrait">
-</div>
 
 ## About Bryan
 
 Bryan is a visual storyteller with a passion for capturing the essence of spaces and moments. His work has been featured in friends' and families' homes.
+
+{% include gallery caption="Gallery" %}
 
 See more of Bryan’s work on [Flickr](https://flickr.com/schauebc) and [Bluesky](https://bsky.app/profile/igotsidetrackded.bsky.social).
 

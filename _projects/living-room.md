@@ -9,12 +9,10 @@ header:
   overlay_filter: 0.2
   caption: "SW Condo Living Room"
 gallery:
-  - url: /assets/interior/living_room_1.jpg
-    caption: "Before"
-  - url: /assets/interior/living_room_2.jpg
-    caption: "After: seating + lighting"
-  - url: /assets/interior/living_room_3.jpg
-    caption: "Material palette"
+  - url: /assets/interior/living_room_demo.jpg
+    caption: "Demolition"
+  - url: /assets/interior/living_room_final.jpg
+    caption: "Final product"
 ---
 
 ## Approach
