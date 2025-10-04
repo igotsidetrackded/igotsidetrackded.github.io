@@ -2,20 +2,19 @@
 title: "Contact"
 permalink: /contact/
 layout: single
-author_profile: true
 ---
 
 ## Contact Addam (Interior Design)
 
-- Email: [addam@schauermayhew.com](mailto:addam@schauermayhew.com)
-- LinkedIn: [Addam Mayhew](https://www.linkedin.com/in/addam-mayhew-8669b123/)
+- [Email](mailto:addam@schauermayhew.com)
+- [LinkedIn](https://www.linkedin.com/in/addam-mayhew-8669b123/)
 
 ## Contact Bryan (Photography)
 
-- Email: [bryan@schauermayhew.com](mailto:bryan@schauermayhew.com)
-- LinkedIn: [Bryan Schauer](https://linkedin.com/in/schauebc)
-- Flickr: [Bryan’s Flickr](https://flickr.com/schauebc)
-- Bluesky: [Bryan’s Bluesky](https://bsky.app/profile/igotsidetrackded.bsky.social)
+- [Email](mailto:bryan@schauermayhew.com)
+- [LinkedIn](https://linkedin.com/in/schauebc)
+- [Flickr](https://flickr.com/schauebc)
+- [Bluesky](https://bsky.app/profile/igotsidetrackded.bsky.social)
 
 ---
 

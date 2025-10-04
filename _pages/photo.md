@@ -2,6 +2,7 @@
 layout: single
 title: "Photography by Bryan"
 permalink: /photo/
+author: bryan
 header:
   overlay_image: /assets/photography/portfolio_hero.jpg
   overlay_filter: 0.2

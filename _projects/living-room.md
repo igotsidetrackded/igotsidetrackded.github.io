@@ -4,6 +4,7 @@ excerpt: "Warm, layered textures with modern lines in a compact space."
 layout: single
 collection: projects
 classes: wide
+author: addam
 header:
   overlay_image: /assets/interior/living_room_hero.jpg
   overlay_filter: 0.2

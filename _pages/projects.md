@@ -2,7 +2,7 @@
 title: "Interior Design Portfolio"
 permalink: /projects/
 layout: archive
-author_profile: true
+author: addam
 ---
 
 {% include feature_row id="portfolio" type="left" %}
