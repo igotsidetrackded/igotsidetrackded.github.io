@@ -10,7 +10,7 @@ baseurl: "" # root
 remote_theme: mmistakes/minimal-mistakes
 
 # additional config options from https://mmistakes.github.io/minimal-mistakes/docs/configuration/
-logo: "/assets/logos/logo_trebuchet.png"
+logo: "/assets/logos/smd_2025.png"
 atom_feed:
   hide: true
 
