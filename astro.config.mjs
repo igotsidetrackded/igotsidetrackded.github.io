@@ -7,4 +7,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  redirects: {
+    '/projects': '/',
+    '/photo': '/',
+    '/about': '/',
+    '/contact': '/',
+    '/bry-resume': '/resume',
+  },
 });
