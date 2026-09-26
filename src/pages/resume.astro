@@ -3,11 +3,257 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Resume | Bryan Schauer">
-  <main class="max-w-4xl mx-auto px-6 py-16 space-y-8">
-    <h1 class="text-3xl font-bold text-white">Bry's Resume</h1>
-    <p class="text-slate-400">coming soon...</p>
-    <a href="/" class="text-sky-400 hover:underline">← Back to Home</a>
+<Layout title="Bryan Schauer | Resume">
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+    <!-- NAVIGATION & HEADER -->
+    <header class="space-y-6 border-b border-slate-800 pb-8">
+      <a href="/" class="inline-flex items-center text-sm font-medium text-sky-400 hover:text-sky-300 transition">
+        ← Back to main site
+      </a>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h1 class="text-4xl font-extrabold text-white tracking-tight">Bryan Schauer</h1>
+          <p class="text-lg font-medium text-sky-400 mt-1">Lead TechOps Engineer | DevSecOps | Cloud Computing</p>
+          <p class="text-sm text-slate-400 mt-1">Washington, DC • bryan.schauer@gmail.com</p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 text-sm">
+          <a 
+            href="https://www.linkedin.com/in/schauebc" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md text-slate-300 hover:text-white hover:border-slate-700 transition"
+          >
+            LinkedIn
+          </a>
+          <a 
+            href="https://www.github.com/igotsidetrackded" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md text-slate-300 hover:text-white hover:border-slate-700 transition"
+          >
+            GitHub
+          </a>
+          <a 
+            href="/" 
+            class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md text-slate-300 hover:text-white hover:border-slate-700 transition"
+          >
+            Personal Site
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="space-y-3">
+      <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Summary</h2>
+      <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+        Lead TechOps Engineer with 15+ years across SaaS, DevOps, and cloud platforms. Deep expertise in AWS, Infrastructure as Code (CloudFormation, Terraform), CI/CD (Jenkins), observability (New Relic, ELK), and cost optimization. Trusted technical owner for secure, scalable systems handling sensitive data; experienced in multi-account AWS migrations, DRY IaC patterns, and modern access management with SSO. Recognized culture leader focused on inclusion, engagement, and sustainable work habits.
+      </p>
+    </section>
+
+    <!-- ACHIEVEMENTS SUMMARY -->
+    <section class="space-y-3">
+      <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Achievements Summary</h2>
+      <ul class="list-disc list-outside pl-5 space-y-2 text-sm text-slate-300 leading-relaxed">
+        <li>Led multi-account AWS migration post–corporate split, standardizing governance, SSO, and provisioning, reducing friction for engineering teams and improving security posture.</li>
+        <li>Cut variable cloud costs per client through rightsizing and Reservations/Savings Plans while maintaining performance SLAs; stabilized monthly hosting spend with clear reporting to Finance.</li>
+        <li>Built DRY CloudFormation templates and reusable Terraform modules, eliminating environment drift and accelerating microservice deployments across dev, pre-prod, and prod.</li>
+        <li>Modernized CI/CD with a custom Jenkins pipeline and GitHub webhooks, reducing deployment lead time and increasing release reliability.</li>
+        <li>Centralized observability with New Relic and ELK, improving MTTR via unified logs, APM, metrics, and alerting; delivered Kibana enablement for engineering teams.</li>
+        <li>Strengthened security and compliance: remediated vulnerabilities with Orca/Qualys/Snyk, migrated secrets to HashiCorp Vault, and streamlined SOC 2 evidence collection.</li>
+      </ul>
+    </section>
+
+    <!-- CORE COMPETENCIES -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Core Competencies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">Cloud & Infrastructure</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">AWS, VPC, IAM/SSO, CloudFormation, Terraform, Jenkins, Docker, Chef, Ubuntu</p>
+        </div>
+        <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">Data & Observability</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">ELK/Logstash, New Relic, Snowflake, dbt Cloud, CloudWatch</p>
+        </div>
+        <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">Security & Compliance</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Orca, Qualys, Snyk, secret management (HashiCorp Vault), SOC 2 evidence collection</p>
+        </div>
+        <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">Programming & Practices</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Python, Bash, DevOps, DevSecOps, CI/CD, cost optimization, incident response, infrastructure resilience</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="space-y-8">
+      <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Professional Experience</h2>
+
+      <!-- Decile - Lead TechOps -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/80 pb-2">
+          <div>
+            <h3 class="text-lg font-bold text-white">Lead TechOps Engineer</h3>
+            <p class="text-sm font-medium text-sky-400">Decile <span class="text-slate-500">•</span> Washington, DC</p>
+          </div>
+          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">Jul 2020 – Present</span>
+        </div>
+        <p class="text-xs font-mono text-slate-400">Technologies: AWS, Docker, Python, Bash, Terraform, Jenkins, Chef, Logstash, New Relic, CloudFormation, Snowflake, dbt Cloud</p>
+        <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
+          <li>Led AWS modernization and multi-account migration following spinout from SocialCode; established secure boundaries, centralized governance, and standardized provisioning.</li>
+          <li>Implemented SSO for user accounts, streamlining access and reducing operational overhead; tightened RBAC and auditability.</li>
+          <li>Built DRY CloudFormation templates for microservices to eliminate configuration drift and accelerate environment creation; improved reuse and consistency across dev, pre-prod, and prod.</li>
+          <li>Introduced Terraform with reusable modules; integrated Snowflake and dbt Cloud providers to bring analytics infrastructure under IaC management.</li>
+          <li>Owned custom Jenkins CI/CD pipeline: automated dev deployments post–code review; simplified release management to pre-prod and prod via GitHub webhooks and gated approvals.</li>
+          <li>Consolidated observability in New Relic for logs, APM, metrics, and alerting; reduced tool sprawl while increasing visibility and response speed.</li>
+          <li>Optimized cloud unit economics and stabilized monthly hosting costs via rightsizing, Savings Plans/Reservations, and AWS Billing/Cost Explorer reporting to Finance and leadership.</li>
+          <li>Monitored and remediated security findings using Orca, Qualys, Snyk, and native AWS services; improved vulnerability SLAs and posture.</li>
+          <li>Mentored Engineering and Data Science teams on DevSecOps best practices; participated in annual incident response exercises.</li>
+          <li>Coordinated SOC 2 audit evidence collection, mapping controls to systems and workflows; reduced audit cycle friction.</li>
+        </ul>
+        <div class="bg-slate-900/50 p-3 rounded border border-slate-800 text-xs text-slate-300 space-y-1">
+          <span class="font-semibold text-sky-400">Key Achievements:</span>
+          <p>• Cut variable cloud costs per client while maintaining performance SLAs through targeted rightsizing and reservation strategies.</p>
+          <p>• Reduced deployment lead time with automated pipelines and standardized templates, improving release predictability.</p>
+        </div>
+      </div>
+
+      <!-- Decile - Head of Culture -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/80 pb-2">
+          <div>
+            <h3 class="text-lg font-bold text-white">Head of Culture</h3>
+            <p class="text-sm font-medium text-sky-400">Decile <span class="text-slate-500">•</span> Washington, DC</p>
+          </div>
+          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">Jul 2020 – Present</span>
+        </div>
+        <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
+          <li>Led culture initiatives emphasizing work-life balance, psychological safety, and inclusivity.</li>
+          <li>Organized remote engagement (happy hours, trivia, fitness challenges) and company-wide activities to sustain connection in distributed teams.</li>
+          <li>Collaborated with executives to set DEI goals and metrics; presented biweekly progress updates at all-hands.</li>
+        </ul>
+        <div class="bg-slate-900/50 p-3 rounded border border-slate-800 text-xs text-slate-300">
+          <span class="font-semibold text-emerald-400">Impact:</span> Increased employee participation in culture programs and improved team sentiment in quarterly surveys.
+        </div>
+      </div>
+
+      <!-- SocialCode -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/80 pb-2">
+          <div>
+            <h3 class="text-lg font-bold text-white">Lead TechOps Engineer</h3>
+            <p class="text-sm font-medium text-sky-400">SocialCode <span class="text-slate-500">•</span> Washington, DC</p>
+          </div>
+          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">Aug 2013 – Jul 2020</span>
+        </div>
+        <p class="text-xs font-mono text-slate-400">Technologies: AWS, Docker, Python, Bash, ELK, Jenkins, Chef, Ubuntu, CloudFormation, Lambda, CloudWatch, HashiCorp Vault</p>
+        <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
+          <li>Mentored engineers; set annual objectives and decomposed them into deliverable projects and tasks.</li>
+          <li>Embedded as a technical resource on Audience Intelligence engineering sprints; bridged DevOps with product engineering.</li>
+          <li>Built a secure AWS environment (CloudFormation) for PII processing from first principles in a new account; aligned with security and compliance requirements.</li>
+          <li>Served as technical point of contact for identity resolution/data ingestion pipeline redevelopment; improved reliability and data integrity.</li>
+          <li>Optimized cloud costs: deployed usage monitors; right-sized instances and storage; replaced EC2 cron hosts with Lambda-based serverless jobs; analyzed EC2/RDS reservations; automated recovery via CloudWatch alarms.</li>
+          <li>Migrated secrets from Chef encrypted databags to HashiCorp Vault in ECS; standardized secret rotation and access.</li>
+          <li>Architected centralized logging via ELK for system and application logs; extended stack functionality using open-source tools (e.g., elastalert) to achieve alerting without enterprise licensing.</li>
+          <li>Executed multiple upgrades of the ELK stack (from pre-1.0 to later releases); presented Kibana deep dives, visualizations, and dashboards to Engineering.</li>
+          <li>Liaised with AWS Enterprise Support; coordinated learning sessions and led biweekly cadence calls for issue tracking and resolution.</li>
+        </ul>
+        <div class="bg-slate-900/50 p-3 rounded border border-slate-800 text-xs text-slate-300 space-y-1">
+          <span class="font-semibold text-sky-400">Selected Outcomes:</span>
+          <p>• Reduced operational toil and improved MTTR through centralized logging and actionable alerts.</p>
+          <p>• Lowered infrastructure costs while increasing reliability via serverless job migration and reservation planning.</p>
+        </div>
+      </div>
+
+      <!-- Catalist -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/80 pb-2">
+          <div>
+            <h3 class="text-lg font-bold text-white">Software Engineer, Team Lead</h3>
+            <p class="text-sm font-medium text-sky-400">Catalist <span class="text-slate-500">•</span> Washington, DC</p>
+          </div>
+          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">Jan 2010 – Aug 2013</span>
+        </div>
+        <p class="text-xs font-mono text-slate-400">Technologies: Postgres/pgpool, Storm, Bash, Java, Drools, Solr/Lucene</p>
+        <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
+          <li>Increased efficiency and maintainability of core data processing systems through refactoring and architectural upgrades.</li>
+          <li>Migrated identity matching to pgpool/Postgres for scale and reliability; designed distributed merge pipelines using Storm to process person-level data at higher throughput and reduced latency.</li>
+          <li>Automated recurring data pipelines using Drools flows; scripted operational tasks in Bash.</li>
+          <li>Redeveloped legacy Java components, removing bottlenecks and improving performance.</li>
+          <li>Conducted R&D on Solr/Lucene for identity matching; evaluated trade-offs against speed requirements; implemented Storm-based stream processing as the chosen path.</li>
+          <li>Trained and mentored developers; cross-trained client-facing teams to spread domain knowledge and reduce ad-hoc requests.</li>
+          <li>Managed projects including person-merge (Storm), analytics model generation upgrades, state voter file processing, and annual vendor data refresh.</li>
+        </ul>
+        <div class="bg-slate-900/50 p-3 rounded border border-slate-800 text-xs text-slate-300 space-y-1">
+          <span class="font-semibold text-sky-400">Results:</span>
+          <p>• Increased throughput of distributed data processing while decreasing end-to-end processing time.</p>
+          <p>• Improved resilience and observability of pipelines, reducing manual interventions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section class="space-y-3">
+        <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Education</h2>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="font-semibold text-slate-200">University of Maryland, College Park</p>
+            <p class="text-xs text-slate-400">M.S., Computer Engineering (Aug 2006 – May 2008)</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-200">Clarkson University</p>
+            <p class="text-xs text-slate-400">B.S., Computer & Electrical Engineering (Aug 2001 – Dec 2005)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Certifications & Training</h2>
+        <ul class="list-disc list-outside pl-5 space-y-1.5 text-xs text-slate-300">
+          <li>Proofpoint Certified Ransomware Specialist 2025</li>
+          <li>SOC 2 audit support and evidence collection (Decile)</li>
+          <li>AWS cost optimization practices (Savings Plans, Reservations)</li>
+          <li>Incident response participation (annual exercises)</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- TECHNICAL TOOLBOX -->
+    <section class="space-y-3">
+      <h2 class="text-xl font-bold text-white border-l-4 border-sky-400 pl-3">Technical Toolbox</h2>
+      <div class="flex flex-wrap gap-2 pt-2">
+        {[
+          "AWS (EC2, RDS, Lambda, VPC)", "IAM / SSO", "CloudFormation", "Terraform", "Jenkins", 
+          "Docker", "Chef", "Ubuntu", "ELK Stack", "New Relic", "Kibana", "Orca", "Qualys", 
+          "Snyk", "HashiCorp Vault", "Snowflake", "dbt Cloud", "Python", "Bash"
+        ].map((item) => (
+          <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded-full text-xs font-mono text-slate-300">
+            {item}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- INTERESTS & PERSONAL STATEMENT -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
+      <div class="space-y-2">
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Interests</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Photography (digital & film), hiking, yoga, meditation, travel, fantasy literature, architecture, dogs, concerts, cooking, baking
+        </p>
+      </div>
+      <div class="space-y-2">
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider">Personal Statement</h3>
+        <p class="text-xs text-slate-400 leading-relaxed italic">
+          "I thrive with curious, collaborative teammates who share knowledge and also know how to switch off 'work mode' to enjoy life. Outside work, I spend time with my husband and our beagle—gardening, hiking, and exploring DC."
+        </p>
+      </div>
+    </section>
   </main>
 </Layout>
 
