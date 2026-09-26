@@ -16,7 +16,7 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 
 ### Prerequisites
 
-- Node.js (v18.x or higher recommended)
+- Node.js (v22.12.0 or higher recommended)
 - `npm`
 
 ### Setup
@@ -49,7 +49,7 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 │       └── deploy.yml          # GitHub Actions deployment workflow
 ├── public/
 │   ├── assets/                 # Static assets (images, direct downloads)
-│   ├── favicon.svg
+│   ├── favicon.png
 │   └── CNAME                   # Custom domain setting for GitHub Pages
 ├── src/
 │   ├── assets/                 # Processed images (handled by Astro <Image/>)
