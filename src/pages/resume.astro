@@ -1,9 +1,75 @@
 ---
 // src/pages/resume.astro
 import Layout from "../layouts/Layout.astro";
+
+// Define subpage links for floating navigation
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/interior", label: "Interior Design Services" },
+  { href: "/photo", label: "Photography" },
+  { href: "/resume", label: "Bry's Resume" },
+  { href: "/contact", label: "Contact" },
+];
 ---
 
-<Layout title="Bryan Schauer | Resume">
+<Layout 
+  title="Resume | Bryan Schauer" 
+  description="Senior Staff DevSecOps Engineer specializing in Cloud Architecture, Platform Security, and Secure Systems Engineering."
+>
+  <!-- FIXED HAMBURGER MENU CONTAINER -->
+  <div class="fixed top-6 right-6 z-50">
+    <button
+      id="menu-btn"
+      type="button"
+      class="p-3 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition backdrop-blur-md shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-sky-400"
+      aria-label="Toggle Navigation"
+      aria-expanded="false"
+    >
+      <svg
+        id="icon-hamburger"
+        class="w-5 h-5 block"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+      <svg
+        id="icon-close"
+        class="w-5 h-5 hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+
+    <nav
+      id="menu-panel"
+      class="hidden absolute right-0 mt-3 w-56 bg-slate-900/95 border border-slate-800 rounded-2xl p-3 shadow-2xl backdrop-blur-xl space-y-1 text-sm font-medium"
+    >
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+
   <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
     <!-- NAVIGATION & HEADER -->
     <header class="space-y-6 border-b border-slate-800 pb-8">
@@ -20,9 +86,9 @@ import Layout from "../layouts/Layout.astro";
             Bryan Schauer
           </h1>
           <p class="text-lg font-medium text-sky-400 mt-1">
-            Lead TechOps Engineer | DevSecOps | Cloud Computing
+            Senior Staff DevSecOps Engineer | Cloud Architecture | Platform Security
           </p>
-          <p class="text-sm text-slate-400 mt-1">
+          <p class="text-sm text-slate-300 mt-1">
             Washington, DC • bryan.schauer@gmail.com
           </p>
         </div>
@@ -60,7 +126,7 @@ import Layout from "../layouts/Layout.astro";
         Summary
       </h2>
       <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-        Lead TechOps Engineer with 15+ years across SaaS, DevOps, and cloud
+        Senior Staff DevSecOps Engineer with 15+ years across SaaS, DevOps, and cloud
         platforms. Deep expertise in AWS, Infrastructure as Code
         (CloudFormation, Terraform), CI/CD (Jenkins), observability (New Relic,
         ELK), and cost optimization. Trusted technical owner for secure,
@@ -159,20 +225,20 @@ import Layout from "../layouts/Layout.astro";
         Professional Experience
       </h2>
 
-      <!-- Decile - Lead TechOps -->
+      <!-- Decile - Senior Staff DevSecOps -->
       <div class="space-y-3">
         <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/80 pb-2">
           <div>
-            <h3 class="text-lg font-bold text-white">Lead TechOps Engineer</h3>
+            <h3 class="text-lg font-bold text-white">Senior Staff DevSecOps Engineer</h3>
             <p class="text-sm font-medium text-sky-400">
-              Decile <span class="text-slate-500">•</span> Washington, DC
+              Decile <span class="text-slate-400">•</span> Washington, DC
             </p>
           </div>
-          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">
+          <span class="text-xs text-slate-300 font-mono mt-1 sm:mt-0">
             Jul 2020 – Present
           </span>
         </div>
-        <p class="text-xs font-mono text-slate-400">
+        <p class="text-xs font-mono text-slate-300">
           Technologies: AWS, Docker, Python, Bash, Terraform, Jenkins, Chef,
           Logstash, New Relic, CloudFormation, Snowflake, dbt Cloud
         </p>
@@ -243,10 +309,10 @@ import Layout from "../layouts/Layout.astro";
           <div>
             <h3 class="text-lg font-bold text-white">Head of Culture</h3>
             <p class="text-sm font-medium text-sky-400">
-              Decile <span class="text-slate-500">•</span> Washington, DC
+              Decile <span class="text-slate-400">•</span> Washington, DC
             </p>
           </div>
-          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">
+          <span class="text-xs text-slate-300 font-mono mt-1 sm:mt-0">
             Jul 2020 – Present
           </span>
         </div>
@@ -278,14 +344,14 @@ import Layout from "../layouts/Layout.astro";
           <div>
             <h3 class="text-lg font-bold text-white">Lead TechOps Engineer</h3>
             <p class="text-sm font-medium text-sky-400">
-              SocialCode <span class="text-slate-500">•</span> Washington, DC
+              SocialCode <span class="text-slate-400">•</span> Washington, DC
             </p>
           </div>
-          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">
+          <span class="text-xs text-slate-300 font-mono mt-1 sm:mt-0">
             Aug 2013 – Jul 2020
           </span>
         </div>
-        <p class="text-xs font-mono text-slate-400">
+        <p class="text-xs font-mono text-slate-300">
           Technologies: AWS, Docker, Python, Bash, ELK, Jenkins, Chef, Ubuntu,
           CloudFormation, Lambda, CloudWatch, HashiCorp Vault
         </p>
@@ -354,14 +420,14 @@ import Layout from "../layouts/Layout.astro";
               Software Engineer, Team Lead
             </h3>
             <p class="text-sm font-medium text-sky-400">
-              Catalist <span class="text-slate-500">•</span> Washington, DC
+              Catalist <span class="text-slate-400">•</span> Washington, DC
             </p>
           </div>
-          <span class="text-xs text-slate-400 font-mono mt-1 sm:mt-0">
+          <span class="text-xs text-slate-300 font-mono mt-1 sm:mt-0">
             Jan 2010 – Aug 2013
           </span>
         </div>
-        <p class="text-xs font-mono text-slate-400">
+        <p class="text-xs font-mono text-slate-300">
           Technologies: Postgres/pgpool, Storm, Bash, Java, Drools, Solr/Lucene
         </p>
         <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
@@ -422,13 +488,13 @@ import Layout from "../layouts/Layout.astro";
             <p class="font-semibold text-slate-200">
               University of Maryland, College Park
             </p>
-            <p class="text-xs text-slate-400">
+            <p class="text-xs text-slate-300">
               M.S., Computer Engineering (Aug 2006 – May 2008)
             </p>
           </div>
           <div>
             <p class="font-semibold text-slate-200">Clarkson University</p>
-            <p class="text-xs text-slate-400">
+            <p class="text-xs text-slate-300">
               B.S., Computer & Electrical Engineering (Aug 2001 – Dec 2005)
             </p>
           </div>
@@ -488,7 +554,7 @@ import Layout from "../layouts/Layout.astro";
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">
           Interests
         </h3>
-        <p class="text-xs text-slate-400 leading-relaxed">
+        <p class="text-xs text-slate-300 leading-relaxed">
           Photography (digital & film), hiking, yoga, meditation, travel,
           fantasy literature, architecture, dogs, concerts, cooking, baking
         </p>
@@ -497,7 +563,7 @@ import Layout from "../layouts/Layout.astro";
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">
           Personal Statement
         </h3>
-        <p class="text-xs text-slate-400 leading-relaxed italic">
+        <p class="text-xs text-slate-300 leading-relaxed italic">
           "I thrive with curious, collaborative teammates who share knowledge
           and also know how to switch off 'work mode' to enjoy life. Outside
           work, I spend time with my husband and our beagle—gardening, hiking,
@@ -506,4 +572,51 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
   </main>
+
+  <!-- CLIENT-SIDE SCRIPT FOR TOGGLE & OUTSIDE CLICK -->
+  <script>
+    function setupMenu() {
+      const btn = document.getElementById("menu-btn");
+      const panel = document.getElementById("menu-panel");
+      const iconHamburger = document.getElementById("icon-hamburger");
+      const iconClose = document.getElementById("icon-close");
+
+      if (!btn || !panel || !iconHamburger || !iconClose) return;
+
+      function toggleMenu() {
+        const isOpen = !panel.classList.contains("hidden");
+        if (isOpen) {
+          panel.classList.add("hidden");
+          iconHamburger.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          btn?.setAttribute("aria-expanded", "false");
+        } else {
+          panel.classList.remove("hidden");
+          iconHamburger.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+          btn?.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !panel.contains(e.target as Node) &&
+          !btn.contains(e.target as Node)
+        ) {
+          panel.classList.add("hidden");
+          iconHamburger.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    setupMenu();
+    document.addEventListener("astro:page-load", setupMenu);
+  </script>
 </Layout>
