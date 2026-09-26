@@ -10,36 +10,102 @@ import artsyImg from "../assets/photography/artsy.jpg";
 import bwImg from "../assets/photography/bw.jpg";
 import natureImg from "../assets/photography/nature.jpg";
 
+// Define subpage links for floating navigation
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/interior", label: "Interior Design Services" },
+  { href: "/photo", label: "Photography" },
+  { href: "/resume", label: "Bry's Resume" },
+  { href: "/contact", label: "Contact" },
+];
+
 const galleryItems = [
   {
     image: archImg,
-    alt: "photos of architecture",
+    alt: "Architectural photography showcasing geometric lines and building design by Bryan Schauer",
     caption: "Architecture",
   },
   {
     image: artsyImg,
-    alt: "artistic photos",
+    alt: "Artistic and abstract photography captured by Bryan Schauer",
     caption: "Artistic",
   },
   {
     image: bwImg,
-    alt: "black and white photos",
+    alt: "High-contrast black and white photography by Bryan Schauer",
     caption: "Black & White",
   },
   {
     image: natureImg,
-    alt: "photos of nature",
+    alt: "Scenic nature and trail landscape photography by Bryan Schauer",
     caption: "Nature",
   },
 ];
 ---
 
-<Layout title="Photography by Bryan | Bryan Schauer">
+<Layout
+  title="Photography by Bryan | Bryan Schauer"
+  description="Explore photography galleries, architectural shots, nature, and artistic visual storytelling by Bryan Schauer."
+>
+  <!-- FIXED HAMBURGER MENU CONTAINER -->
+  <div class="fixed top-6 right-6 z-50">
+    <button
+      id="menu-btn"
+      type="button"
+      class="p-3 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition backdrop-blur-md shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-sky-400"
+      aria-label="Toggle Navigation"
+      aria-expanded="false"
+    >
+      <svg
+        id="icon-hamburger"
+        class="w-5 h-5 block"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+      <svg
+        id="icon-close"
+        class="w-5 h-5 hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+
+    <nav
+      id="menu-panel"
+      class="hidden absolute right-0 mt-3 w-56 bg-slate-900/95 border border-slate-800 rounded-2xl p-3 shadow-2xl backdrop-blur-xl space-y-1 text-sm font-medium"
+    >
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+
   <!-- HERO OVERLAY HEADER -->
   <div class="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden border-b border-slate-800">
     <Image
       src={portfolioHero}
-      alt="Photography Hero"
+      alt="Featured photography cover showcase by Bryan Schauer"
       class="w-full h-full object-cover object-center brightness-75"
     />
     <div class="absolute inset-0 bg-slate-950/50 backdrop-blur-[2px] flex items-center">
@@ -124,7 +190,7 @@ const galleryItems = [
         </a>
       </div>
 
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 text-sm text-slate-400">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 text-sm text-slate-300">
         <p>
           For photography inquiries,{" "}
           <a
@@ -136,7 +202,7 @@ const galleryItems = [
           .
         </p>
         <p>
-          DevSecOps Engineer in my day-to-day — check out my{" "}
+          Senior Staff DevSecOps Engineer in my day-to-day — check out my{" "}
           <a href="/resume" class="text-sky-400 hover:underline font-medium">
             resumé
           </a>
@@ -145,4 +211,51 @@ const galleryItems = [
       </div>
     </section>
   </main>
+
+  <!-- CLIENT-SIDE SCRIPT FOR TOGGLE & OUTSIDE CLICK -->
+  <script>
+    function setupMenu() {
+      const btn = document.getElementById("menu-btn");
+      const panel = document.getElementById("menu-panel");
+      const iconHamburger = document.getElementById("icon-hamburger");
+      const iconClose = document.getElementById("icon-close");
+
+      if (!btn || !panel || !iconHamburger || !iconClose) return;
+
+      function toggleMenu() {
+        const isOpen = !panel.classList.contains("hidden");
+        if (isOpen) {
+          panel.classList.add("hidden");
+          iconHamburger.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          btn?.setAttribute("aria-expanded", "false");
+        } else {
+          panel.classList.remove("hidden");
+          iconHamburger.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+          btn?.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !panel.contains(e.target as Node) &&
+          !btn.contains(e.target as Node)
+        ) {
+          panel.classList.add("hidden");
+          iconHamburger.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    setupMenu();
+    document.addEventListener("astro:page-load", setupMenu);
+  </script>
 </Layout>
