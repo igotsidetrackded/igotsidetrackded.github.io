@@ -1,14 +1,14 @@
 ---
 // src/pages/alm-portfolio.astro
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="ALM Portfolio | Addam Mayhew Interior Design">
   <!-- HEADER / HERO OVERLAY -->
   <div class="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden border-b border-slate-800">
-    <img 
+    <img
       src="/assets/interior/kitchen_cad_ai_gen.png"
-      alt="ALM Interior Design Kitchen CAD" 
+      alt="ALM Interior Design Kitchen CAD"
       class="w-full h-full object-cover object-center brightness-75"
     />
     <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px] flex items-center">
@@ -27,19 +27,23 @@ import Layout from '../layouts/Layout.astro';
   <main class="max-w-4xl mx-auto px-6 py-12 space-y-8">
     <!-- NAVIGATION & INTRO -->
     <div class="space-y-4">
-      <a href="/" class="inline-flex items-center text-sm font-medium text-sky-400 hover:text-sky-300 transition">
+      <a
+        href="/"
+        class="inline-flex items-center text-sm font-medium text-sky-400 hover:text-sky-300 transition"
+      >
         ← Back to main site
       </a>
       <p class="text-slate-300 text-base leading-relaxed">
-        This portfolio presents selected interior design projects, highlighting space planning, material palettes, and finished environments.
+        This portfolio presents selected interior design projects, highlighting
+        space planning, material palettes, and finished environments.
       </p>
     </div>
 
     <!-- ACTION BUTTONS -->
     <div class="flex flex-wrap gap-4 pt-2">
-      <a 
-        href="https://docs.google.com/presentation/d/e/2PACX-1vQu-0iVbO77vBLlZuAY0EZWK-g5_KjZmwzNt0L2ZHC4oZ2Ulrrz4A4oXlnmPQsteZF3IZWj6k-44UxW/pub?start=false&loop=true&delayms=3000" 
-        target="_blank" 
+      <a
+        href="https://docs.google.com/presentation/d/e/2PACX-1vQu-0iVbO77vBLlZuAY0EZWK-g5_KjZmwzNt0L2ZHC4oZ2Ulrrz4A4oXlnmPQsteZF3IZWj6k-44UxW/pub?start=false&loop=true&delayms=3000"
+        target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-sky-500 text-slate-950 hover:bg-sky-400 transition shadow-sm"
       >
@@ -50,11 +54,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- RESPONSIVE SLIDES EMBED -->
     <div class="space-y-2 pt-4">
       <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
-        <iframe title="ALM portfolio presentation"
-          src="https://docs.google.com/presentation/d/e/2PACX-1vQu-0iVbO77vBLlZuAY0EZWK-g5_KjZmwzNt0L2ZHC4oZ2Ulrrz4A4oXlnmPQsteZF3IZWj6k-44UxW/pubembed?start=false&loop=true&delayms=3000" 
+        <iframe
+          title="ALM portfolio presentation"
+          src="https://docs.google.com/presentation/d/e/2PACX-1vQu-0iVbO77vBLlZuAY0EZWK-g5_KjZmwzNt0L2ZHC4oZ2Ulrrz4A4oXlnmPQsteZF3IZWj6k-44UxW/pubembed?start=false&loop=true&delayms=3000"
           class="absolute inset-0 w-full h-full border-0"
-          allowfullscreen="true" 
-          mozallowfullscreen="true" 
+          allowfullscreen="true"
+          mozallowfullscreen="true"
           webkitallowfullscreen="true"
         ></iframe>
       </div>
@@ -64,4 +69,3 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </main>
 </Layout>
-

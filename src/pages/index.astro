@@ -1,84 +1,217 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import natureImg from '../assets/photography/nature.jpg';
-import archImg from '../assets/photography/arch.jpg';
-import bwImg from '../assets/photography/bw.jpg';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import natureImg from "../assets/photography/nature.jpg";
+import archImg from "../assets/photography/arch.jpg";
+import bwImg from "../assets/photography/bw.jpg";
+
+// Define subpage links
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/interior", label: "Interior Design Services" },
+  { href: "/alm-portfolio", label: "Addam's Portfolio" },
+  { href: "/photo", label: "Photography" },
+  { href: "/resume", label: "Bry's Resume" },
+  { href: "/contact", label: "Contact" },
+];
 ---
 
 <Layout title="Bryan Schauer | DevSecOps & Personal Hub">
   <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
-      
-      <!-- HERO SECTION -->
-      <section class="space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-          Hey, I'm <span class="text-sky-400">Bryan Schauer</span>.
-        </h1>
-        <p class="text-lg text-slate-300 leading-relaxed">
-          DevSecOps Engineer by day. Photography enthusiast, hiker, yogi, and dog dad by night. 
-          Building secure pipelines and exploring the outdoors.
+    <!-- HERO SECTION -->
+    <section class="space-y-4">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Hey, I'm <span class="text-sky-400">Bryan Schauer</span>.
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        DevSecOps Engineer by day. Photography enthusiast, hiker, yogi, and dog
+        dad by night. Building secure pipelines and exploring the outdoors.
+      </p>
+    </section>
+
+    <!-- MODULAR INTERESTS GRID -->
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+        <h2 class="text-xl font-bold text-sky-400 mb-2">
+          Engineering & Security
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Focusing on CI/CD security, automation, cloud infrastructure, and
+          DevSecOps best practices.
         </p>
-      </section>
+      </div>
 
-      <!-- MODULAR INTERESTS GRID -->
-      <section class="grid md:grid-cols-3 gap-6">
-        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
-          <h2 class="text-xl font-bold text-sky-400 mb-2">Engineering & Security</h2>
-          <p class="text-slate-400 text-sm">
-            Focusing on CI/CD security, automation, cloud infrastructure, and DevSecOps best practices.
-          </p>
-        </div>
+      <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+        <h2 class="text-xl font-bold text-emerald-400 mb-2">
+          Outdoors & Movement
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Hiking scenic trails, practicing yoga, and spending quality time
+          outdoors.
+        </p>
+      </div>
 
-        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
-          <h2 class="text-xl font-bold text-emerald-400 mb-2">Outdoors & Movement</h2>
-          <p class="text-slate-400 text-sm">
-            Hiking scenic trails, practicing yoga, and spending quality time outdoors.
-          </p>
-        </div>
+      <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+        <h2 class="text-xl font-bold text-purple-400 mb-2">Life & Community</h2>
+        <p class="text-slate-400 text-sm">
+          Hanging out with my husband, our two dogs, and connecting with local
+          neighbors and friends.
+        </p>
+      </div>
+    </section>
 
-        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
-          <h2 class="text-xl font-bold text-purple-400 mb-2">Life & Community</h2>
-          <p class="text-slate-400 text-sm">
-            Hanging out with my husband, our two dogs, and connecting with local neighbors and friends.
-          </p>
-        </div>
-      </section>
+    <!-- PHOTOGRAPHY PREVIEW SECTION -->
+    <section class="space-y-6">
+      <div class="flex justify-between items-end">
+        <h2 class="text-2xl font-bold text-white">Featured Photography</h2>
+        <span class="text-xs text-slate-500 uppercase tracking-wider">
+          Gallery
+        </span>
+      </div>
 
-      <!-- PHOTOGRAPHY PREVIEW SECTION -->
-      <section class="space-y-6">
-        <div class="flex justify-between items-end">
-          <h2 class="text-2xl font-bold text-white">Featured Photography</h2>
-          <span class="text-xs text-slate-500 uppercase tracking-wider">Gallery</span>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-  <Image 
-    src={natureImg} 
-    alt="Nature photo" 
-    class="aspect-square object-cover rounded-lg border border-slate-800" 
-  />
-  <Image 
-    src={archImg} 
-    alt="Architecture photo" 
-    class="aspect-square object-cover rounded-lg border border-slate-800" 
-  />
-  <Image 
-    src={bwImg} 
-    alt="Black and white photo" 
-    class="aspect-square object-cover rounded-lg border border-slate-800" 
-  />
-</div>
-      </section>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <Image
+          src={natureImg}
+          alt="Nature photo"
+          class="aspect-square object-cover rounded-lg border border-slate-800"
+        />
+        <Image
+          src={archImg}
+          alt="Architecture photo"
+          class="aspect-square object-cover rounded-lg border border-slate-800"
+        />
+        <Image
+          src={bwImg}
+          alt="Black and white photo"
+          class="aspect-square object-cover rounded-lg border border-slate-800"
+        />
+      </div>
+    </section>
 
-      <!-- FOOTER / CONNECT -->
-      <footer class="pt-8 border-t border-slate-800 flex justify-between items-center text-sm text-slate-400">
-        <p>© {new Date().getFullYear()} Bryan Schauer</p>
-        <div class="space-x-4">
-          <a href="https://github.com/igotsidetrackded" target="_blank" class="hover:text-white transition">GitHub</a>
-          <a href="https://linkedin.com/in/schauebc" class="hover:text-white transition">LinkedIn</a>
-        </div>
-      </footer>
+    <!-- FIXED HAMBURGER MENU CONTAINER -->
+    <div class="fixed top-6 right-6 z-50">
+      <!-- TRIGGER BUTTON -->
+      <button
+        id="menu-btn"
+        type="button"
+        class="p-3 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition backdrop-blur-md shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-sky-400"
+        aria-label="Toggle Navigation"
+        aria-expanded="false"
+      >
+        <!-- Hamburger Icon (Default) -->
+        <svg
+          id="icon-hamburger"
+          class="w-5 h-5 block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+        <!-- Close Icon (Hidden by default) -->
+        <svg
+          id="icon-close"
+          class="w-5 h-5 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
 
+      <!-- OVERLAY MENU PANEL (Hidden by default) -->
+      <nav
+        id="menu-panel"
+        class="hidden absolute right-0 mt-3 w-56 bg-slate-900/95 border border-slate-800 rounded-2xl p-3 shadow-2xl backdrop-blur-xl space-y-1 text-sm font-medium"
+      >
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <!-- CLIENT-SIDE SCRIPT FOR TOGGLE & OUTSIDE CLICK -->
+    <script>
+      function setupMenu() {
+        const btn = document.getElementById("menu-btn");
+        const panel = document.getElementById("menu-panel");
+        const iconHamburger = document.getElementById("icon-hamburger");
+        const iconClose = document.getElementById("icon-close");
+
+        if (!btn || !panel || !iconHamburger || !iconClose) return;
+
+        function toggleMenu() {
+          const isOpen = !panel.classList.contains("hidden");
+          if (isOpen) {
+            panel.classList.add("hidden");
+            iconHamburger.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+            btn?.setAttribute("aria-expanded", "false");
+          } else {
+            panel.classList.remove("hidden");
+            iconHamburger.classList.add("hidden");
+            iconClose.classList.remove("hidden");
+            btn?.setAttribute("aria-expanded", "true");
+          }
+        }
+
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleMenu();
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            !panel.contains(e.target as Node) &&
+            !btn.contains(e.target as Node)
+          ) {
+            panel.classList.add("hidden");
+            iconHamburger.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      // Run on initial load & Astro view transitions (if active)
+      setupMenu();
+      document.addEventListener("astro:page-load", setupMenu);
+    </script>
+    <!-- FOOTER / CONNECT -->
+    <footer class="pt-8 border-t border-slate-800 flex justify-between items-center text-sm text-slate-400">
+      <p>© {new Date().getFullYear()} Bryan Schauer</p>
+      <div class="space-x-4">
+        <a
+          href="https://github.com/igotsidetrackded"
+          target="_blank"
+          class="hover:text-white transition"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/schauebc"
+          class="hover:text-white transition"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </footer>
   </main>
 </Layout>
-
