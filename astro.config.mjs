@@ -10,7 +10,6 @@ export default defineConfig({
   redirects: {
     '/projects': '/',
     '/about': '/',
-    '/contact': '/',
     '/bry-resume': '/resume',
   },
 });
