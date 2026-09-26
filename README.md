@@ -22,12 +22,14 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 ### Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/igotsidetrackded/igotsidetrackded.github.io.git
    cd igotsidetrackded.github.io
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
