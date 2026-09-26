@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import natureImg from '../assets/photography/nature.jpg';
+import archImg from '../assets/photography/arch.jpg';
+import bwImg from '../assets/photography/bw.jpg';
+---
+
+<Layout title="Bryan Schauer | DevSecOps & Personal Hub">
+  <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
+      
+      <!-- HERO SECTION -->
+      <section class="space-y-4">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+          Hey, I'm <span class="text-sky-400">Bryan Schauer</span>.
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          DevSecOps Engineer by day. Photography enthusiast, hiker, yogi, and dog dad by night. 
+          Building secure pipelines and exploring the outdoors.
+        </p>
+      </section>
+
+      <!-- MODULAR INTERESTS GRID -->
+      <section class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+          <h2 class="text-xl font-bold text-sky-400 mb-2">Engineering & Security</h2>
+          <p class="text-slate-400 text-sm">
+            Focusing on CI/CD security, automation, cloud infrastructure, and DevSecOps best practices.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+          <h2 class="text-xl font-bold text-emerald-400 mb-2">Outdoors & Movement</h2>
+          <p class="text-slate-400 text-sm">
+            Hiking scenic trails, practicing yoga, and spending quality time outdoors.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+          <h2 class="text-xl font-bold text-purple-400 mb-2">Life & Community</h2>
+          <p class="text-slate-400 text-sm">
+            Hanging out with my husband, our two dogs, and connecting with local neighbors and friends.
+          </p>
+        </div>
+      </section>
+
+      <!-- PHOTOGRAPHY PREVIEW SECTION -->
+      <section class="space-y-6">
+        <div class="flex justify-between items-end">
+          <h2 class="text-2xl font-bold text-white">Featured Photography</h2>
+          <span class="text-xs text-slate-500 uppercase tracking-wider">Gallery</span>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <Image 
+    src={natureImg} 
+    alt="Nature photo" 
+    class="aspect-square object-cover rounded-lg border border-slate-800" 
+  />
+  <Image 
+    src={archImg} 
+    alt="Architecture photo" 
+    class="aspect-square object-cover rounded-lg border border-slate-800" 
+  />
+  <Image 
+    src={bwImg} 
+    alt="Black and white photo" 
+    class="aspect-square object-cover rounded-lg border border-slate-800" 
+  />
+</div>
+      </section>
+
+      <!-- FOOTER / CONNECT -->
+      <footer class="pt-8 border-t border-slate-800 flex justify-between items-center text-sm text-slate-400">
+        <p>© {new Date().getFullYear()} Bryan Schauer</p>
+        <div class="space-x-4">
+          <a href="https://github.com/igotsidetrackded" target="_blank" class="hover:text-white transition">GitHub</a>
+          <a href="https://linkedin.com/in/schauebc" class="hover:text-white transition">LinkedIn</a>
+        </div>
+      </footer>
+
+  </main>
+</Layout>
+
