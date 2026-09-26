@@ -8,7 +8,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   redirects: {
-    '/projects': '/',
+    '/projects': '/alm-portfolio',
     '/bry-resume': '/resume',
   },
 });
