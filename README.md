@@ -4,7 +4,7 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 
 ## 🛠 Tech Stack
 
-- **Framework**: [Astro v5](https://astro.build/)
+- **Framework**: [Astro v7](https://astro.build/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) via `@tailwindcss/vite`
 - **Hosting**: GitHub Pages
 - **Automation**: GitHub Actions (`.github/workflows/deploy.yml`)
