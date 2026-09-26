@@ -1,10 +1,6 @@
 ---
 // src/pages/alm-portfolio.astro
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-
-// Import hero image from assets
-import kitchenCadImg from "../assets/interior/kitchen_cad_ai_gen.png";
 
 // Define subpage links for floating navigation
 const navLinks = [
@@ -76,8 +72,8 @@ const navLinks = [
 
   <!-- HEADER / HERO OVERLAY -->
   <div class="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden border-b border-slate-800">
-    <Image
-      src={kitchenCadImg}
+    <img
+      src="/assets/interior/kitchen_cad_ai_gen.png"
       alt="3D CAD architectural model rendering of a modern kitchen design by Addam Mayhew"
       class="w-full h-full object-cover object-center brightness-75"
     />
