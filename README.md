@@ -46,33 +46,54 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 
 ```text
 .
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions deployment workflow
-├── public/
-│   ├── assets/                 # Static assets (images, direct downloads)
-│   ├── favicon.png
-│   └── CNAME                   # Custom domain setting for GitHub Pages
-├── src/
-│   ├── assets/                 # Processed images (handled by Astro <Image/>)
-│   ├── layouts/
-│   │   └── Layout.astro        # Main site shell and global metadata
-│   ├── pages/
-│   │   ├── index.astro         # Main landing page (DevSecOps hub & photo preview)
-│   │   └── alm-portfolio.astro # Addam Mayhew's interior design portfolio
-│   └── styles/
-│       └── global.css          # Tailwind CSS v4 import directive
-├── astro.config.mjs            # Astro configuration & redirect rules
-├── jekyll_backup/              # Legacy Jekyll site archive
+├── AGENTS.md
+├── astro.config.mjs
+├── CLAUDE.md -> AGENTS.md
+├── package-lock.json
 ├── package.json
-└── README.md
+├── public
+│   ├── assets
+│   │   └── interior
+│   │       ├── addam_avatar.jpg
+│   │       └── kitchen_cad_ai_gen.png
+│   ├── CNAME
+│   └── favicon.png
+├── README.md
+├── src
+│   ├── assets
+│   │   ├── astro.svg
+│   │   ├── background.svg
+│   │   └── photography
+│   │       ├── about_page.jpg
+│   │       ├── arch.jpg
+│   │       ├── artsy.jpg
+│   │       ├── bryan_avatar.jpg
+│   │       ├── bw.jpg
+│   │       ├── nature.jpg
+│   │       ├── portfolio_hero.jpg
+│   │       └── smd_bry.jpg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   ├── pages
+│   │   ├── about.astro
+│   │   ├── alm-portfolio.astro
+│   │   ├── contact.astro
+│   │   ├── index.astro
+│   │   ├── interior.astro
+│   │   ├── photo.astro
+│   │   └── resume.astro
+│   └── styles
+│       └── global.css
+└── tsconfig.json
 ```
 
 ### Site Routes
 
 - **`/`**: Home page detailing DevSecOps work, background, and photography preview.
 - **`/alm-portfolio/`**: Addam Mayhew's interior design portfolio slide deck and showcase.
-- **Rendered Pages**: `/`, `/projects/`, `/photo/`, `/about/`, `/contact/`, `/resume/`, and `/alm-portfolio/` are implemented as Astro pages.
+- **Rendered Pages**: `/`, `/interior/`, `/photo/`, `/about/`, `/contact/`, `/resume/`, and `/alm-portfolio/` are implemented as Astro pages.
 - **Legacy Redirect**: `/bry-resume` redirects to `/resume` in `astro.config.mjs` to preserve the old resume URL.
 
 ---
