@@ -70,7 +70,8 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 
 - **`/`**: Home page detailing DevSecOps work, background, and photography preview.
 - **`/alm-portfolio/`**: Addam Mayhew's interior design portfolio slide deck and showcase.
-- **Legacy Redirects**: Legacy routes (`/projects`, `/photo`, `/about`, `/contact`, `/bry-resume`) are handled via Astro redirects in `astro.config.mjs` to maintain SEO parity and prevent broken links.
+- **Rendered Pages**: `/`, `/projects/`, `/photo/`, `/about/`, `/contact/`, `/resume/`, and `/alm-portfolio/` are implemented as Astro pages.
+- **Legacy Redirect**: `/bry-resume` redirects to `/resume` in `astro.config.mjs` to preserve the old resume URL.
 
 ---
 
