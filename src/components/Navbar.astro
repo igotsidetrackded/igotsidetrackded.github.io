@@ -1,0 +1,116 @@
+---
+// src/components/Navbar.astro
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/interior", label: "Interior Design Services" },
+  { href: "/photo", label: "Photography" },
+  { href: "/resume", label: "Bry's Resume" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<!-- FIXED HAMBURGER MENU CONTAINER -->
+<div class="fixed top-6 right-6 z-50">
+  <button
+    id="menu-btn"
+    type="button"
+    class="p-3 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition backdrop-blur-md shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-sky-400"
+    aria-label="Toggle Navigation"
+    aria-expanded="false"
+  >
+    <svg
+      id="icon-hamburger"
+      class="w-5 h-5 block"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      ></path>
+    </svg>
+    <svg
+      id="icon-close"
+      class="w-5 h-5 hidden"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  </button>
+
+  <nav
+    id="menu-panel"
+    class="hidden absolute right-0 mt-3 w-56 bg-slate-900/95 border border-slate-800 rounded-2xl p-3 shadow-2xl backdrop-blur-xl space-y-1 text-sm font-medium"
+  >
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="block px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</div>
+
+<!-- CLIENT-SIDE SCRIPT FOR TOGGLE & OUTSIDE CLICK -->
+<script>
+  function setupMenu() {
+    const btn = document.getElementById("menu-btn");
+    const panel = document.getElementById("menu-panel");
+    const iconHamburger = document.getElementById("icon-hamburger");
+    const iconClose = document.getElementById("icon-close");
+
+    if (!btn || !panel || !iconHamburger || !iconClose) return;
+
+    function toggleMenu() {
+      const isOpen = !panel.classList.contains("hidden");
+      if (isOpen) {
+        panel.classList.add("hidden");
+        iconHamburger.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+        btn?.setAttribute("aria-expanded", "false");
+      } else {
+        panel.classList.remove("hidden");
+        iconHamburger.classList.add("hidden");
+        iconClose.classList.remove("hidden");
+        btn?.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    // Prevent duplicate listeners if script re-runs
+    if (!btn.hasAttribute("data-listener")) {
+      btn.setAttribute("data-listener", "true");
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !panel.contains(e.target as Node) &&
+          !btn.contains(e.target as Node)
+        ) {
+          panel.classList.add("hidden");
+          iconHamburger.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  }
+
+  setupMenu();
+  document.addEventListener("astro:page-load", setupMenu);
+</script>
