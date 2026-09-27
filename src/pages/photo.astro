@@ -22,30 +22,34 @@ const navLinks = [
 const galleryItems = [
   {
     image: archImg,
-    alt: "Architectural photography showcasing geometric lines and building design by Bryan Schauer",
+    alt: "Architectural photography showcasing geometric lines and building design by Bryan Schauer-Mayhew",
     caption: "Architecture",
+    href: "https://photos.app.goo.gl/KXdwWE3XNrp3BegG7",
   },
   {
     image: artsyImg,
-    alt: "Artistic and abstract photography captured by Bryan Schauer",
+    alt: "Artistic and abstract photography captured by Bryan Schauer-Mayhew",
     caption: "Artistic",
+    href: "https://photos.app.goo.gl/j9avxPa7asV1W4F99",
   },
   {
     image: bwImg,
-    alt: "High-contrast black and white photography by Bryan Schauer",
+    alt: "High-contrast black and white photography by Bryan Schauer-Mayhew",
     caption: "Black & White",
+    href: "https://photos.app.goo.gl/EcA5ttqPmHxtErAD9",
   },
   {
     image: natureImg,
-    alt: "Scenic nature and trail landscape photography by Bryan Schauer",
+    alt: "Scenic nature and trail landscape photography by Bryan Schauer-Mayhew",
     caption: "Nature",
+    href: "https://photos.app.goo.gl/TDzS4STGVXaLPZpA8",
   },
 ];
 ---
 
 <Layout
-  title="Photography by Bryan | Bryan Schauer"
-  description="Explore photography galleries, architectural shots, nature, and artistic visual storytelling by Bryan Schauer."
+  title="Photography by Bry | Bryan Schauer-Mayhew"
+  description="Explore photography galleries, architectural shots, nature, and artistic visual storytelling by Bryan Schauer-Mayhew."
 >
   <!-- FIXED HAMBURGER MENU CONTAINER -->
   <div class="fixed top-6 right-6 z-50">
@@ -101,19 +105,19 @@ const galleryItems = [
     </nav>
   </div>
 
-  <!-- HERO OVERLAY HEADER -->
-  <div class="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden border-b border-slate-800">
+  <!-- HERO OVERLAY HEADER (Reduced height) -->
+  <div class="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden border-b border-slate-800">
     <Image
       src={portfolioHero}
-      alt="Featured photography cover showcase by Bryan Schauer"
+      alt="Featured photography cover showcase by Bryan Schauer-Mayhew"
       class="w-full h-full object-cover object-center brightness-75"
     />
     <div class="absolute inset-0 bg-slate-950/50 backdrop-blur-[2px] flex items-center">
-      <div class="max-w-4xl mx-auto px-6 w-full space-y-2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-          Photography by Bryan
+      <div class="max-w-4xl mx-auto px-6 w-full space-y-1">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          Photography by Bry
         </h1>
-        <p class="text-base sm:text-lg text-slate-300 max-w-2xl">
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl">
           Visual storytelling capturing spaces, architecture, and quiet moments.
         </p>
       </div>
@@ -122,7 +126,7 @@ const galleryItems = [
 
   <!-- MAIN CONTENT -->
   <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-    <!-- ABOUT BRYAN SECTION -->
+    <!-- ABOUT BRY SECTION -->
     <section class="space-y-4">
       <a
         href="/"
@@ -131,12 +135,12 @@ const galleryItems = [
         ← Back to main site
       </a>
       <h2 class="text-2xl font-bold text-white border-l-4 border-sky-400 pl-3">
-        About Bryan
+        About Bry
       </h2>
       <p class="text-slate-300 text-base leading-relaxed">
-        Bryan is a visual storyteller with a passion for capturing the essence
-        of spaces and moments. His work has been featured in friends' and
-        families' homes.
+        Bry is a visual storyteller with a passion for capturing the essence of
+        spaces and moments. His work has been featured in friends' and families'
+        homes.
       </p>
     </section>
 
@@ -146,7 +150,7 @@ const galleryItems = [
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {galleryItems.map((item) => (
           <a
-            href={item.image.src}
+            href={item.href}
             target="_blank"
             rel="noopener noreferrer"
             class="group relative block overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-md hover:border-slate-700 transition"
@@ -158,10 +162,13 @@ const galleryItems = [
                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
               />
             </div>
-            <div class="p-4 bg-slate-900/90 backdrop-blur border-t border-slate-800">
+            <div class="p-4 bg-slate-900/90 backdrop-blur border-t border-slate-800 flex items-center justify-between">
               <p class="text-sm font-semibold text-slate-200 group-hover:text-sky-400 transition">
                 {item.caption}
               </p>
+              <span class="text-xs text-slate-400 group-hover:text-sky-400 transition flex items-center gap-1">
+                View Album →
+              </span>
             </div>
           </a>
         ))}
@@ -171,7 +178,7 @@ const galleryItems = [
     <!-- LINKS & SOCIAL -->
     <section class="space-y-4 pt-6 border-t border-slate-800">
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
-        <span>See more of Bryan’s work on:</span>
+        <span>See more of Bry’s work on:</span>
         <a
           href="https://flickr.com/schauebc"
           target="_blank"
@@ -197,7 +204,7 @@ const galleryItems = [
             href="mailto:bryan@schauermayhew.com"
             class="text-sky-400 hover:underline font-medium"
           >
-            email Bryan
+            email Bry
           </a>
           .
         </p>
