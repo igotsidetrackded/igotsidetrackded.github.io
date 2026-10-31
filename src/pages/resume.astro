@@ -1,7 +1,6 @@
 ---
 // src/pages/resume.astro
 import Layout from "../layouts/Layout.astro";
-
 ---
 
 <Layout
@@ -64,14 +63,18 @@ import Layout from "../layouts/Layout.astro";
         Summary
       </h2>
       <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-        Senior Staff DevSecOps Engineer with 15+ years across SaaS, DevSecOps,
-        and cloud platforms. Deep expertise in AWS, Snowflake, Infrastructure as
+        Senior Staff DevSecOps Engineer with 15+ years of experience building,
+        securing, and scaling cloud platforms across SaaS environments.
+        Expertise spans AWS, Kubernetes, Snowflake, Python, Infrastructure as
         Code (CloudFormation, Terraform, OpenTofu), CI/CD (Jenkins, ArgoCD),
-        observability (New Relic, ELK), and cost optimization. Trusted technical
-        owner for secure, scalable systems handling sensitive data; experienced
-        in multi-account AWS migrations, DRY IaC patterns, and modern access
-        management with SSO. Recognized culture leader focused on inclusion,
-        engagement, and sustainable work habits.
+        observability (New Relic, ELK), and cost optimization. Proven track
+        record deploying cutting-edge AI integrations—including Decile’s hosted
+        MCP server on EKS, featured in the Claude Connector Directory—as well as
+        leading multi-account AWS migrations, SSO access management, and SOC 2
+        Type II compliance. Began as a data/pipeline engineer and now partners
+        across engineering, finance, HR, and operations to turn manual workflows
+        into secure, self-serve systems while fostering sustainable work
+        culture.
       </p>
     </section>
 
@@ -82,33 +85,24 @@ import Layout from "../layouts/Layout.astro";
       </h2>
       <ul class="list-disc list-outside pl-5 space-y-2 text-sm text-slate-300 leading-relaxed">
         <li>
-          Led multi-account AWS migration post–corporate split, standardizing
-          governance, SSO, and provisioning, reducing friction for engineering
-          teams and improving security posture.
+          Deployed Decile's hosted MCP server on EKS, giving LLM clients such as
+          Claude governed access to customer segmentation and order analytics.
+          Listed in the Claude Connector Directory.
         </li>
         <li>
-          Cut variable cloud costs per client through rightsizing and
-          Reservations/Savings Plans while maintaining performance SLAs;
-          stabilized monthly hosting spend with clear reporting to Finance.
+          Secured the MCP service with layered controls: GuardDuty EKS audit and
+          runtime monitoring, CrowdStrike Falcon, Orca (SideScanning and
+          Sensor), and New Relic and Sentry observability.
         </li>
         <li>
-          Built DRY CloudFormation templates and reusable Terraform modules,
-          eliminating environment drift and accelerating microservice
-          deployments across dev, pre-prod, and prod.
+          Led SOC 2 Type II audit readiness and evidence collection, and owned
+          vendor management and security posture.
         </li>
         <li>
-          Modernized CI/CD with a custom Jenkins pipeline and GitHub webhooks,
-          reducing deployment lead time and increasing release reliability.
-        </li>
-        <li>
-          Centralized observability with New Relic and ELK, improving MTTR via
-          unified logs, APM, metrics, and alerting; delivered Kibana enablement
-          for engineering teams.
-        </li>
-        <li>
-          Strengthened security and compliance: remediated vulnerabilities with
-          Orca/Qualys/Snyk, migrated secrets to HashiCorp Vault, and streamlined
-          SOC 2 evidence collection.
+          Ran vendor evaluations and build-vs-buy decisions across security,
+          observability and data tooling. After ramping up Terraform usage,
+          migrated from Terraform Cloud to S3 backend using OpenTofu to save
+          $35k annually
         </li>
       </ul>
     </section>
@@ -119,6 +113,16 @@ import Layout from "../layouts/Layout.astro";
         Core Competencies
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">
+            AI & Platform
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            MCP server design and hosting, Claude Team administration, LLM
+            tool/function calling, Kubernetes (EKS), GuardDuty, CrowdStrike,
+            Orca, Sentry
+          </p>
+        </div>
         <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
           <h3 class="text-sm font-semibold text-sky-400 uppercase tracking-wider mb-2">
             Cloud & Infrastructure
@@ -259,17 +263,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-300">
           <li>
-            Led culture initiatives emphasizing work-life balance, psychological
-            safety, and inclusivity.
-          </li>
-          <li>
-            Organized remote engagement (happy hours, trivia, fitness
-            challenges) and company-wide activities to sustain connection in
-            distributed teams.
-          </li>
-          <li>
-            Collaborated with executives to set DEI goals and metrics; presented
-            biweekly progress updates at all-hands.
+            Led company culture and DEI programming, with periodic all-hands
+            updates.
           </li>
         </ul>
         <div class="bg-slate-900/50 p-3 rounded border border-slate-800 text-xs text-slate-300">
@@ -322,18 +317,13 @@ import Layout from "../layouts/Layout.astro";
             via CloudWatch alarms.
           </li>
           <li>
-            Migrated secrets from Chef encrypted databags to HashiCorp Vault in
-            ECS; standardized secret rotation and access.
+            Implemented secrets migration, standardization, and rotation from
+            Chef encrypted databags to HashiCorp Vault in ECS.
           </li>
           <li>
             Architected centralized logging via ELK for system and application
             logs; extended stack functionality using open-source tools (e.g.,
             elastalert) to achieve alerting without enterprise licensing.
-          </li>
-          <li>
-            Executed multiple upgrades of the ELK stack (from pre-1.0 to later
-            releases); presented Kibana deep dives, visualizations, and
-            dashboards to Engineering.
           </li>
           <li>
             Liaised with AWS Enterprise Support; coordinated learning sessions
@@ -481,6 +471,13 @@ import Layout from "../layouts/Layout.astro";
           "dbt Cloud",
           "Python",
           "Bash",
+          "Kubernetes/EKS",
+          "Airflow",
+          "Fivetran",
+          "Sentry",
+          "CrowdStrike",
+          "GuardDuty",
+          "Claude Code",
         ].map((item) => (
           <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded-full text-xs font-mono text-slate-300">
             {item}
