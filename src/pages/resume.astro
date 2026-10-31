@@ -8,18 +8,152 @@ import Layout from "../layouts/Layout.astro";
   description="Senior Staff DevSecOps Engineer specializing in Cloud Architecture, Platform Security, and Secure Systems Engineering."
 >
   <head>
-    <!-- Other meta tags and title -->
-    <style>
-      @media print {
-        @page {
-          margin: 12mm; /* Sets clean margins for the PDF */
-          size: portrait;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Bryan Schauer</title>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Resume | Bryan Schauer</title>
+      <style>
+        @media print {
+          @page {
+            margin: 0.35in;
+            size: letter;
+          }
+
+          /* Force plain white background and dark text globally */
+          body {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            font-size: 10px !important;
+            line-height: 1.3 !important;
+            -webkit-print-color-adjust: exact;
+          }
+
+          /* Clean up main container padding for print */
+          main.max-w-4xl {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+
+          /* Controlled vertical spacing between sections */
+          section {
+            margin-top: 1.1rem !important;
+            margin-bottom: 0 !important;
+          }
+
+          /* Force EVERY text element to be crisp dark slate */
+          p,
+          li,
+          span,
+          a,
+          h1,
+          h2,
+          h3,
+          h4,
+          div {
+            color: #0f172a !important;
+          }
+
+          /* Headers spacing & page-break rules */
+          h1 {
+            font-size: 16px !important;
+          }
+          h2 {
+            font-size: 12.5px !important;
+            font-weight: bold !important;
+            margin-top: 0 !important;
+            margin-bottom: 0.25rem !important;
+            break-after: avoid !important;
+            page-break-after: avoid !important;
+          }
+          h3 {
+            font-size: 10.5px !important;
+            font-weight: bold !important;
+            margin-top: 0 !important;
+            margin-bottom: 0.15rem !important;
+            break-after: avoid !important;
+            page-break-after: avoid !important;
+          }
+
+          /* Paragraphs and list items */
+          p,
+          li {
+            font-size: 9.5px !important;
+            margin-bottom: 0.2rem !important;
+          }
+
+          /* 2-column grid layout for competencies and education */
+          .grid {
+            display: grid !important;
+            gap: 0.4rem !important;
+          }
+          .grid-cols-1.md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          }
+
+          /* Prevent individual job blocks from breaking awkwardly */
+          section > div.space-y-3,
+          .space-y-8 > div {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
+
+          /* Card container styling */
+          .bg-slate-900,
+          .bg-slate-900\/50 {
+            background-color: #f8fafc !important;
+            border: 1px solid #cbd5e1 !important;
+            padding: 0.35rem 0.55rem !important;
+            border-radius: 4px !important;
+          }
+
+          /* General container and border cleanup */
+          main,
+          div {
+            background-color: transparent !important;
+            border-color: #cbd5e1 !important;
+          }
+
+          /* Size down header links */
+          header .flex.flex-wrap.gap-3 a {
+            font-size: 8px !important;
+            padding: 1px 4px !important;
+            border-radius: 3px !important;
+            border: 1px solid #94a3b8 !important;
+            background-color: transparent !important;
+          }
+
+          /* TECHNICAL TOOLBOX INLINE PILLS */
+          .flex.flex-wrap.gap-2 {
+            display: block !important;
+            margin-top: 0.25rem !important;
+          }
+
+          .rounded-full {
+            border: 1px solid #cbd5e1 !important;
+            background-color: #f8fafc !important;
+            font-size: 8px !important;
+            padding: 1px 5px !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            margin-right: 4px !important;
+            margin-bottom: 3px !important;
+          }
+
+          /* Hide web-only elements */
+          .print\:hidden {
+            display: none !important;
+          }
+
+          a {
+            color: #0369a1 !important;
+            text-decoration: none;
+          }
         }
-        body {
-          -webkit-print-color-adjust: exact; /* Preserves dark/accent background styling if applicable */
-        }
-      }
-    </style>
+      </style>
+    </head>
   </head>
   <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
     <!-- NAVIGATION & HEADER -->
@@ -62,31 +196,13 @@ import Layout from "../layouts/Layout.astro";
             GitHub
           </a>
           <a
-            href="/"
+            href="https://www.schauermayhew.com"
+            target="_blank"
+            rel="noopener noreferrer"
             class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md text-slate-300 hover:text-white hover:border-slate-700 transition"
           >
             Personal Site
           </a>
-          <!-- PRINT BUTTON -->
-          <button
-            onclick="window.print()"
-            class="px-3 py-1.5 bg-sky-600 hover:bg-sky-500 border border-sky-500 rounded-md text-white font-medium transition flex items-center gap-1.5 cursor-pointer print:hidden"
-          >
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
-              ></path>
-            </svg>
-            Print / PDF
-          </button>
         </div>
       </div>
     </header>
