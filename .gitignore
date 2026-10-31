@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 jekyll_backup/
+
+# pdf of resume
+public/Bryan_Schauer_Resume.pdf
