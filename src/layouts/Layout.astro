@@ -27,6 +27,16 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKGHSETFP2"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YKGHSETFP2');
+    </script>
   </head>
   <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
     <!-- Navbar renders on every page automatically -->
