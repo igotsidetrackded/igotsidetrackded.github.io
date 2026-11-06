@@ -6,27 +6,28 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host 0.0.0.0 --port 3000",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host 0.0.0.0 --port 3000",
     "astro": "astro",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "astro check",
     "generate:pdf": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.5",
+    "astro": "7.3.3",
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
     "esbuild": true
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.12",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
-    "puppeteer": "^25.16.0",
-    "wait-on": "^9.5.1"
+    "typescript": "^5.7.3"
   }
 }

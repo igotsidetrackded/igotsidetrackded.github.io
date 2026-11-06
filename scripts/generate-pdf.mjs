@@ -1,9 +1,10 @@
 import { spawn } from "child_process";
-import puppeteer from "puppeteer";
+// puppeteer stripped per environment constraints
+// import puppeteer from "puppeteer";
 import http from "http";
-import waitOn from "wait-on";
+// import waitOn from "wait-on";
 
-const PORT = 4321;
+const PORT = 3000;
 const URL = `http://localhost:${PORT}/resume`;
 
 function checkServerRunning() {

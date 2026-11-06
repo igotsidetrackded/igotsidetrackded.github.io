@@ -73,6 +73,7 @@ const navLinks = [
     if (!btn || !panel || !iconHamburger || !iconClose) return;
 
     function toggleMenu() {
+      if (!panel || !iconHamburger || !iconClose) return;
       const isOpen = !panel.classList.contains("hidden");
       if (isOpen) {
         panel.classList.add("hidden");
@@ -96,6 +97,7 @@ const navLinks = [
       });
 
       document.addEventListener("click", (e) => {
+        if (!panel || !iconHamburger || !iconClose) return;
         if (
           !panel.contains(e.target as Node) &&
           !btn.contains(e.target as Node)

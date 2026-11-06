@@ -1,0 +1,8 @@
+{
+  "name": "Bryan Schauer & Addam Mayhew Portfolio",
+  "description": "Bryan Schauer & Addam Mayhew — Senior Staff DevSecOps Engineering, Cloud Architecture, and Interior Design Portfolio.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
