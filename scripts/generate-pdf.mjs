@@ -1,10 +1,9 @@
 import { spawn } from "child_process";
-// puppeteer stripped per environment constraints
-// import puppeteer from "puppeteer";
+import puppeteer from "puppeteer";
 import http from "http";
-// import waitOn from "wait-on";
+import waitOn from "wait-on";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const URL = `http://localhost:${PORT}/resume`;
 
 function checkServerRunning() {
@@ -46,7 +45,10 @@ function checkServerRunning() {
   }
 
   console.log("📄 Generating PDF...");
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage();
 
   await page.goto(URL, { waitUntil: "networkidle0" });
