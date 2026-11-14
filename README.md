@@ -16,7 +16,7 @@ Personal hub and portfolio site for Bryan Schauer and Addam Mayhew, built with A
 
 ### Prerequisites
 
-- Node.js (v22.12.0 or higher recommended)
+- Node.js (v22.23.4 or higher)
 - `npm`
 
 ### Setup
