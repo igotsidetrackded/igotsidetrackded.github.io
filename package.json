@@ -16,9 +16,9 @@
     "generate:pdf": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.5",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "7.4.7",
+    "astro": "^7.4.12",
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
