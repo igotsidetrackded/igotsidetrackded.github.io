@@ -20,5 +20,9 @@ export default defineConfig({
   redirects: {
     "/bry-resume": "/resume",
   },
-  integrations: [sitemap()],
+  integrations: [
+  	sitemap({
+    filter: (page) => !page.endsWith("/2027/"),
+  }),
+  ],
 });
