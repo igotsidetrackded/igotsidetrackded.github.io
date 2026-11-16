@@ -104,6 +104,7 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
           <!-- Sync Status Badge -->
           <span
             id="sync-status"
+            aria-live="polite"
             class="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1 font-mono text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
           >
             <span id="sync-dot" class="h-2 w-2 rounded-full bg-zinc-400"></span>
@@ -127,15 +128,16 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         class="mb-8 hidden rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
       >
         <label for="pat-input" class="block text-xs font-medium text-zinc-700 dark:text-zinc-300">
-          GitHub Fine-Grained Personal Access Token (Gists read/write scope)
+          GitHub Fine-Grained Personal Access Token (Gists read/write scope only)
         </label>
         <p class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
-          Stored strictly in this browser's <code class="font-mono">localStorage</code>. Never committed to git.
+          Defaults to <code class="font-mono">sessionStorage</code> (cleared when tab closes). Never committed to git.
         </p>
         <div class="mt-3 flex gap-2">
           <input
             id="pat-input"
             type="password"
+            autocomplete="off"
             placeholder="github_pat_..."
             class="flex-1 rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-1.5 font-mono text-xs text-zinc-900 focus:border-emerald-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100"
           />
@@ -154,6 +156,14 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
             Cancel
           </button>
         </div>
+        <label class="mt-2.5 inline-flex cursor-pointer items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400">
+          <input
+            id="persist-token-cb"
+            type="checkbox"
+            class="h-3.5 w-3.5 rounded border-zinc-300 text-emerald-600 focus:ring-emerald-500 dark:border-zinc-700 dark:bg-zinc-950"
+          />
+          <span>Remember token in <code class="font-mono">localStorage</code> on this trusted device</span>
+        </label>
       </div>
 
       <!-- Overall Progress & Filter Bar -->
@@ -174,13 +184,25 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
         <div class="mt-4 flex items-center justify-between border-t border-zinc-100 pt-4 dark:border-zinc-800">
           <div class="flex gap-1.5" role="group" aria-label="Filter goals">
-            <button data-filter="all" class="filter-btn active rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900">
+            <button
+              data-filter="all"
+              aria-pressed="true"
+              class="filter-btn rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900"
+            >
               All
             </button>
-            <button data-filter="remaining" class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
+            <button
+              data-filter="remaining"
+              aria-pressed="false"
+              class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            >
               Remaining
             </button>
-            <button data-filter="completed" class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
+            <button
+              data-filter="completed"
+              aria-pressed="false"
+              class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            >
               Completed
             </button>
           </div>
@@ -251,10 +273,11 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       const TOTAL_ITEMS = Number(app.dataset.total || 27);
       const TOKEN_KEY = "goals_2027_github_pat";
 
-      // State: Record<string, boolean> e.g. { "1": true, "2": false }
+      // State & Serialized Save Queue
       let completedMap: Record<string, boolean> = {};
+      let pendingDeltas: Record<string, boolean> = {};
+      let isFlushing = false;
       let currentFilter: "all" | "remaining" | "completed" = "all";
-      let isSaving = false;
 
       // DOM Refs
       const syncDot = document.getElementById("sync-dot")!;
@@ -262,6 +285,7 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       const authBtn = document.getElementById("auth-btn")!;
       const tokenDrawer = document.getElementById("token-drawer")!;
       const patInput = document.getElementById("pat-input") as HTMLInputElement;
+      const persistTokenCb = document.getElementById("persist-token-cb") as HTMLInputElement;
       const saveTokenBtn = document.getElementById("save-token-btn")!;
       const cancelTokenBtn = document.getElementById("cancel-token-btn")!;
       const overallCount = document.getElementById("overall-count")!;
@@ -269,7 +293,12 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       const modeHint = document.getElementById("mode-hint")!;
 
       function getToken(): string | null {
-        return localStorage.getItem(TOKEN_KEY);
+        return sessionStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY);
+      }
+
+      function clearToken() {
+        sessionStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(TOKEN_KEY);
       }
 
       function setStatus(state: "loading" | "synced" | "saving" | "error" | "unconfigured", text: string) {
@@ -323,7 +352,6 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
             title.classList.remove("line-through", "text-zinc-400", "dark:text-zinc-500");
           }
 
-          // Filter visibility
           const matchesFilter =
             currentFilter === "all" ||
             (currentFilter === "completed" && isDone) ||
@@ -331,7 +359,6 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
           row.classList.toggle("hidden", !matchesFilter);
         });
 
-        // Update category counters & hide empty sections when filtering
         Object.entries(catTotals).forEach(([catId, counts]) => {
           const badge = document.querySelector(`[data-cat-progress="${catId}"]`);
           if (badge) badge.textContent = `${counts.done}/${counts.total}`;
@@ -343,10 +370,24 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
           }
         });
 
-        // Overall progress bar
         const pct = Math.round((completedTotal / TOTAL_ITEMS) * 100);
         overallCount.textContent = `${completedTotal} / ${TOTAL_ITEMS} (${pct}%)`;
         overallBar.style.width = `${pct}%`;
+      }
+
+      async function fetchRemoteMap(): Promise<Record<string, boolean>> {
+        const headers: Record<string, string> = {
+          Accept: "application/vnd.github+json"
+        };
+        const token = getToken();
+        if (token) headers.Authorization = `Bearer ${token}`;
+
+        const res = await fetch(`https://api.github.com/gists/${GIST_ID}?t=${Date.now()}`, { headers });
+        if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+
+        const data = await res.json();
+        const file = data.files?.[GIST_FILENAME];
+        return file?.content ? JSON.parse(file.content) : {};
       }
 
       async function loadFromGist() {
@@ -358,21 +399,9 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
         setStatus("loading", "Fetching...");
         try {
-          const headers: Record<string, string> = {
-            Accept: "application/vnd.github+json"
-          };
-          const token = getToken();
-          if (token) headers.Authorization = `Bearer ${token}`;
-
-          // Cache-bust query param ensures fresh state across devices
-          const res = await fetch(`https://api.github.com/gists/${GIST_ID}?t=${Date.now()}`, { headers });
-          if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-
-          const data = await res.json();
-          const file = data.files?.[GIST_FILENAME];
-          if (file?.content) {
-            completedMap = JSON.parse(file.content);
-          }
+          const remote = await fetchRemoteMap();
+          // Preserve any un-flushed local toggles on top of fresh remote data
+          completedMap = { ...remote, ...pendingDeltas };
           setStatus("synced", "Synced");
         } catch (err) {
           console.error(err);
@@ -382,36 +411,59 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         }
       }
 
-      async function saveToGist() {
+      // Serialized Read-Modify-Write queue prevents out-of-order overwrites across rapid clicks or devices
+      async function flushSaveQueue() {
+        if (isFlushing) return;
         const token = getToken();
         if (!token || !GIST_ID || GIST_ID === "YOUR_GITHUB_GIST_ID_HERE") return;
 
-        isSaving = true;
+        isFlushing = true;
         setStatus("saving", "Saving...");
-        try {
-          const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
-            method: "PATCH",
-            headers: {
-              Accept: "application/vnd.github+json",
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              files: {
-                [GIST_FILENAME]: {
-                  content: JSON.stringify(completedMap, null, 2)
-                }
-              }
-            })
-          });
 
-          if (!res.ok) throw new Error(`Save failed: ${res.status}`);
+        try {
+          while (Object.keys(pendingDeltas).length > 0) {
+            // Snapshot & clear current batch before async work so clicks during flight queue cleanly
+            const batch = { ...pendingDeltas };
+            pendingDeltas = {};
+
+            // 1. Read latest remote state
+            const latestRemote = await fetchRemoteMap();
+
+            // 2. Merge latest remote + batch + any newer clicks made mid-request
+            const merged = { ...latestRemote, ...batch, ...pendingDeltas };
+
+            // 3. Write merged state
+            const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+              method: "PATCH",
+              headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                files: {
+                  [GIST_FILENAME]: {
+                    content: JSON.stringify(merged, null, 2)
+                  }
+                }
+              })
+            });
+
+            if (!res.ok) {
+              // Re-queue failed batch so changes aren't lost
+              pendingDeltas = { ...batch, ...pendingDeltas };
+              throw new Error(`Save failed: ${res.status}`);
+            }
+
+            completedMap = { ...merged };
+            renderState();
+          }
           setStatus("synced", "Saved to Gist");
         } catch (err) {
           console.error(err);
           setStatus("error", "Save failed (check token)");
         } finally {
-          isSaving = false;
+          isFlushing = false;
         }
       }
 
@@ -420,15 +472,16 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         cb.addEventListener("change", () => {
           const id = cb.dataset.goalCheckbox!;
           completedMap[id] = cb.checked;
+          pendingDeltas[id] = cb.checked;
           renderState();
-          saveToGist();
+          flushSaveQueue();
         });
       });
 
       // Event Listeners: Auth Drawer
       authBtn.addEventListener("click", () => {
         if (getToken()) {
-          localStorage.removeItem(TOKEN_KEY);
+          clearToken();
           updateAuthUI();
         } else {
           tokenDrawer.classList.remove("hidden");
@@ -439,7 +492,12 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       saveTokenBtn.addEventListener("click", () => {
         const val = patInput.value.trim();
         if (!val) return;
-        localStorage.setItem(TOKEN_KEY, val);
+        clearToken();
+        if (persistTokenCb.checked) {
+          localStorage.setItem(TOKEN_KEY, val);
+        } else {
+          sessionStorage.setItem(TOKEN_KEY, val);
+        }
         patInput.value = "";
         tokenDrawer.classList.add("hidden");
         updateAuthUI();
@@ -451,16 +509,17 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         tokenDrawer.classList.add("hidden");
       });
 
-      // Event Listeners: Filter Tabs
+      // Event Listeners: Filter Tabs (with aria-pressed sync)
       document.querySelectorAll<HTMLButtonElement>(".filter-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           currentFilter = btn.dataset.filter as "all" | "remaining" | "completed";
-          document.querySelectorAll(".filter-btn").forEach((b) => {
-            b.className =
-              "filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800";
+          document.querySelectorAll<HTMLButtonElement>(".filter-btn").forEach((b) => {
+            const isActive = b === btn;
+            b.setAttribute("aria-pressed", String(isActive));
+            b.className = isActive
+              ? "filter-btn rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900"
+              : "filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800";
           });
-          btn.className =
-            "filter-btn active rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900";
           renderState();
         });
       });
