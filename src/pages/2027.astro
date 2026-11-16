@@ -80,8 +80,20 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>27 for 2027 — Bryan Schauer</title>
+    <!-- Prevent theme flash before first paint -->
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-emerald-500/20">
+  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased transition-colors duration-200 selection:bg-emerald-500/20">
     <main
       id="tracker-app"
       data-gist-id={GIST_ID}
@@ -89,7 +101,7 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       data-total={totalItems}
       class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8"
     >
-      <!-- Header & Sync Controls -->
+      <!-- Header & Controls -->
       <header class="mb-10 flex flex-col gap-4 border-b border-zinc-200 pb-8 dark:border-zinc-800 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
@@ -118,6 +130,52 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
             class="rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
           >
             Unlock to Edit
+          </button>
+
+          <!-- Accessible Theme Toggle Button -->
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white p-1.5 text-zinc-700 transition hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+          >
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg
+              id="icon-sun"
+              class="hidden h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg
+              id="icon-moon"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
           </button>
         </div>
       </header>
@@ -283,6 +341,9 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       const syncDot = document.getElementById("sync-dot")!;
       const syncLabel = document.getElementById("sync-label")!;
       const authBtn = document.getElementById("auth-btn")!;
+      const themeToggleBtn = document.getElementById("theme-toggle")!;
+      const iconSun = document.getElementById("icon-sun")!;
+      const iconMoon = document.getElementById("icon-moon")!;
       const tokenDrawer = document.getElementById("token-drawer")!;
       const patInput = document.getElementById("pat-input") as HTMLInputElement;
       const persistTokenCb = document.getElementById("persist-token-cb") as HTMLInputElement;
@@ -291,6 +352,21 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       const overallCount = document.getElementById("overall-count")!;
       const overallBar = document.getElementById("overall-bar")!;
       const modeHint = document.getElementById("mode-hint")!;
+
+      // Theme Toggle Logic
+      function syncThemeUI() {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeToggleBtn.setAttribute("aria-pressed", String(isDark));
+        themeToggleBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+        iconSun.classList.toggle("hidden", !isDark);
+        iconMoon.classList.toggle("hidden", isDark);
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        syncThemeUI();
+      });
 
       function getToken(): string | null {
         return sessionStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY);
@@ -400,7 +476,6 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         setStatus("loading", "Fetching...");
         try {
           const remote = await fetchRemoteMap();
-          // Preserve any un-flushed local toggles on top of fresh remote data
           completedMap = { ...remote, ...pendingDeltas };
           setStatus("synced", "Synced");
         } catch (err) {
@@ -411,7 +486,6 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
         }
       }
 
-      // Serialized Read-Modify-Write queue prevents out-of-order overwrites across rapid clicks or devices
       async function flushSaveQueue() {
         if (isFlushing) return;
         const token = getToken();
@@ -422,17 +496,12 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
         try {
           while (Object.keys(pendingDeltas).length > 0) {
-            // Snapshot & clear current batch before async work so clicks during flight queue cleanly
             const batch = { ...pendingDeltas };
             pendingDeltas = {};
 
-            // 1. Read latest remote state
             const latestRemote = await fetchRemoteMap();
-
-            // 2. Merge latest remote + batch + any newer clicks made mid-request
             const merged = { ...latestRemote, ...batch, ...pendingDeltas };
 
-            // 3. Write merged state
             const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
               method: "PATCH",
               headers: {
@@ -450,7 +519,6 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
             });
 
             if (!res.ok) {
-              // Re-queue failed batch so changes aren't lost
               pendingDeltas = { ...batch, ...pendingDeltas };
               throw new Error(`Save failed: ${res.status}`);
             }
@@ -525,6 +593,7 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       });
 
       // Initialize
+      syncThemeUI();
       updateAuthUI();
       loadFromGist();
     </script>
