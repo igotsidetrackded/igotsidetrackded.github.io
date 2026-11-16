@@ -1,6 +1,7 @@
 ---
 // src/pages/2027.astro
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
 
 const GIST_ID = "23b1399578b246be147d4662d6ae6499";
 const GIST_FILENAME = "goals-2027.json";
@@ -94,6 +95,7 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
     </script>
   </head>
   <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased transition-colors duration-200 selection:bg-emerald-500/20">
+    <Navbar />
     <main
       id="tracker-app"
       data-gist-id={GIST_ID}
@@ -101,6 +103,15 @@ const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
       data-total={totalItems}
       class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8"
     >
+      <div class="mb-6">
+        <a
+          href="/"
+          class="inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300 transition"
+        >
+          ← Back to main site
+        </a>
+      </div>
+
       <!-- Header & Controls -->
       <header class="mb-10 flex flex-col gap-4 border-b border-zinc-200 pb-8 dark:border-zinc-800 sm:flex-row sm:items-end sm:justify-between">
         <div>
