@@ -1,0 +1,473 @@
+---
+// src/pages/2027.astro
+import "../styles/global.css";
+
+const GIST_ID = "23b1399578b246be147d4662d6ae6499";
+const GIST_FILENAME = "goals-2027.json";
+
+const categories = [
+  {
+    id: "creative",
+    title: "Creative & Side Projects",
+    items: [
+      { id: 1, title: "Publish three new photo essays on schauermayhew.com", desc: "Architectural walks around Capitol Hill, moody winter light, or coastal summer shots." },
+      { id: 2, title: "Release a v2 feature for the Thursday Tile Society Charleston Trainer", desc: "Timed speed-rounds, statistics tracking, or a hard-mode simulated wall on Astro." },
+      { id: 3, title: "Build a personal photo archive & backup pipeline", desc: "Automate a local/cloud workflow on the new M5 MacBook Air to organize and back up RAW/JPEG shoots." },
+      { id: 4, title: "Print and frame four of your favorite photographs", desc: "Take work off the screen and hang a small curated series in the house or office." },
+      { id: 5, title: "Contribute to or release one small open-source utility", desc: "Build a tiny CLI tool, Astro component, or MCP server snippet purely for fun." }
+    ]
+  },
+  {
+    id: "travel",
+    title: "Travel, Outdoors & Dog Adventures",
+    items: [
+      { id: 6, title: "Spend a long weekend at the family cottage on Wolfe Island", desc: "Ferry-ride pacing, waterfront mornings, and zero screen time on the St. Lawrence." },
+      { id: 7, title: "Plan one memorable group outing or feast for the August Outer Banks week", desc: "Take ownership of a Manteo day-trip itinerary, sunset beach bonfire, or group cookout night." },
+      { id: 8, title: "Take a spontaneous Shenandoah or Blue Ridge cabin weekend", desc: "Book a last-minute fall foliage or snowy mid-winter cabin stay within two hours of D.C." },
+      { id: 9, title: "Hit six new hiking trails across Maryland, Virginia, or West Virginia", desc: "Mix day-hikes in Shenandoah, Great Falls, Catoctin, or Harpers Ferry with Teagan and Paco." },
+      { id: 10, title: "Plan a seasonal 'sniffari' or off-leash adventure day for Teagan and Paco", desc: "Explore a Sniffspot private acre, dog-friendly vineyard patio, or waterfront trail in Annapolis." },
+      { id: 11, title: "Do a 'tourist in D.C.' museum & architecture day with Addam", desc: "Spend a Saturday hitting the Hirshhorn, Rubell Museum, or Glenstone followed by a long lunch." }
+    ]
+  },
+  {
+    id: "culture",
+    title: "Sports, Culture & Social",
+    items: [
+      { id: 12, title: "Catch a DC Flight match during their inaugural 2027 season", desc: "Head down to The Anthem at The Wharf for a Major League Volleyball match." },
+      { id: 13, title: "Get to Audi Field for at least one D.C. United and/or Washington Spirit match", desc: "Make a full matchday out of it in Buzzard Point." },
+      { id: 14, title: "Get tickets to a local theater performance, symphony, or live show", desc: "Plan a night out at Arena Stage, the Kennedy Center, The Atlantis, or 9:30 Club." },
+      { id: 15, title: "Host a Thursday Tile Society seasonal tournament or themed night", desc: "Put together a bracket, silly trophies, and themed snacks for the crew." },
+      { id: 16, title: "Teach one new friend how to play American Mahjong", desc: "Host a low-stakes Sunday afternoon 'Mahjong 101' session to expand the sub roster." },
+      { id: 17, title: "Schedule a quarterly 'no-agenda' dinner with close friends", desc: "Put four dates on the calendar in January so busy weeks don't eat up catch-up time." }
+    ]
+  },
+  {
+    id: "home",
+    title: "Home, Garden & Analog Projects",
+    items: [
+      { id: 18, title: "Spend a weekend clearing out unused stuff from the shed", desc: "Donate, recycle, or toss clutter so everything remaining actually has a place." },
+      { id: 19, title: "Tackle one interior refresh or gallery-wall project with Addam", desc: "Pick one room or hallway in the house that hasn't gotten full attention yet and finish it." },
+      { id: 20, title: "Start a dedicated windowsill kitchen herb garden (and propagate three plants)", desc: "Keep fresh basil, rosemary, thyme, and mint going indoors, and pot three cuttings to gift." },
+      { id: 21, title: "Host a backyard Virginia wine & small-plates evening", desc: "Pair Walsh Family, Muse, or Stinson bottles with a vegetarian/pescatarian grazing board." },
+      { id: 22, title: "Complete a 'zero-screen' 1,000-piece puzzle project", desc: "Set up a dedicated puzzle table for a cozy winter weekend or rainy stretch." }
+    ]
+  },
+  {
+    id: "rhythm",
+    title: "Health, Commute & Personal Rhythm",
+    items: [
+      { id: 23, title: "Turn your Rosslyn Metro commute into a signature 4-day-a-week ritual", desc: "Dedicated audiobook/podcast blocks, reading, or walking a stop early in good weather." },
+      { id: 24, title: "Lock in a 3x/week workout routine at the Rosslyn office gym", desc: "Build a sustainable strength or cardio habit around the new in-office schedule." },
+      { id: 25, title: "Set up your new M5 MacBook Air with a clean, declarative dotfiles setup", desc: "Make migrating in January a satisfying weekend ritual with automated Homebrew/Astro scripts." }
+    ]
+  },
+  {
+    id: "career",
+    title: "Career (Focused & High-Leverage)",
+    items: [
+      { id: 26, title: "Ship your first Applied AI platform milestone at Graham Holdings within 90 days", desc: "Establish early momentum and credibility with the new team without burning out." },
+      { id: 27, title: "Protect a hard 'end-of-commute' boundary", desc: "Leave work at Rosslyn when stepping off the Metro so evenings and weekends stay yours." }
+    ]
+  }
+];
+
+const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27 for 2027 — Bryan Schauer</title>
+  </head>
+  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-emerald-500/20">
+    <main
+      id="tracker-app"
+      data-gist-id={GIST_ID}
+      data-gist-filename={GIST_FILENAME}
+      data-total={totalItems}
+      class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8"
+    >
+      <!-- Header & Sync Controls -->
+      <header class="mb-10 flex flex-col gap-4 border-b border-zinc-200 pb-8 dark:border-zinc-800 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+            Annual Ledger
+          </p>
+          <h1 class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
+            27 for 2027
+          </h1>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Sync Status Badge -->
+          <span
+            id="sync-status"
+            class="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1 font-mono text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
+          >
+            <span id="sync-dot" class="h-2 w-2 rounded-full bg-zinc-400"></span>
+            <span id="sync-label">Loading...</span>
+          </span>
+
+          <!-- Auth Toggle Button -->
+          <button
+            id="auth-btn"
+            type="button"
+            class="rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+          >
+            Unlock to Edit
+          </button>
+        </div>
+      </header>
+
+      <!-- Token Input Drawer (Hidden by default) -->
+      <div
+        id="token-drawer"
+        class="mb-8 hidden rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+      >
+        <label for="pat-input" class="block text-xs font-medium text-zinc-700 dark:text-zinc-300">
+          GitHub Fine-Grained Personal Access Token (Gists read/write scope)
+        </label>
+        <p class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+          Stored strictly in this browser's <code class="font-mono">localStorage</code>. Never committed to git.
+        </p>
+        <div class="mt-3 flex gap-2">
+          <input
+            id="pat-input"
+            type="password"
+            placeholder="github_pat_..."
+            class="flex-1 rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-1.5 font-mono text-xs text-zinc-900 focus:border-emerald-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100"
+          />
+          <button
+            id="save-token-btn"
+            type="button"
+            class="rounded-lg bg-emerald-600 px-4 py-1.5 text-xs font-medium text-white transition hover:bg-emerald-500"
+          >
+            Save
+          </button>
+          <button
+            id="cancel-token-btn"
+            type="button"
+            class="rounded-lg border border-zinc-300 px-3 py-1.5 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <!-- Overall Progress & Filter Bar -->
+      <section class="mb-10 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div class="flex items-center justify-between text-sm">
+          <span class="font-medium text-zinc-700 dark:text-zinc-300">Overall Progress</span>
+          <span id="overall-count" class="font-mono text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            0 / {totalItems} (0%)
+          </span>
+        </div>
+        <div class="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+          <div
+            id="overall-bar"
+            class="h-full rounded-full bg-emerald-500 transition-all duration-300"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between border-t border-zinc-100 pt-4 dark:border-zinc-800">
+          <div class="flex gap-1.5" role="group" aria-label="Filter goals">
+            <button data-filter="all" class="filter-btn active rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900">
+              All
+            </button>
+            <button data-filter="remaining" class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
+              Remaining
+            </button>
+            <button data-filter="completed" class="filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
+              Completed
+            </button>
+          </div>
+          <span id="mode-hint" class="text-xs text-zinc-400">
+            Read-only mode
+          </span>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <div class="space-y-10">
+        {categories.map((cat) => (
+          <section data-category={cat.id} class="category-section">
+            <div class="mb-3 flex items-baseline justify-between">
+              <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+                {cat.title}
+              </h2>
+              <span
+                data-cat-progress={cat.id}
+                class="font-mono text-xs text-zinc-500 dark:text-zinc-400"
+              >
+                0/{cat.items.length}
+              </span>
+            </div>
+
+            <ul class="divide-y divide-zinc-200 overflow-hidden rounded-xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
+              {cat.items.map((item) => (
+                <li
+                  data-item-id={item.id}
+                  data-cat-id={cat.id}
+                  class="goal-row group flex items-start gap-3.5 p-4 transition hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40"
+                >
+                  <input
+                    type="checkbox"
+                    id={`goal-${item.id}`}
+                    data-goal-checkbox={item.id}
+                    disabled
+                    class="mt-1 h-4 w-4 cursor-pointer rounded border-zinc-300 text-emerald-600 focus:ring-emerald-500 disabled:cursor-default disabled:opacity-60 dark:border-zinc-700 dark:bg-zinc-950"
+                  />
+                  <label
+                    for={`goal-${item.id}`}
+                    class="flex-1 cursor-pointer select-none"
+                  >
+                    <div class="flex items-baseline gap-2">
+                      <span class="font-mono text-xs text-zinc-400">
+                        {String(item.id).padStart(2, "0")}.
+                      </span>
+                      <span class="goal-title text-sm font-medium text-zinc-900 transition dark:text-zinc-100">
+                        {item.title}
+                      </span>
+                    </div>
+                    <p class="mt-1 pl-6 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+                      {item.desc}
+                    </p>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </main>
+
+    <script>
+      const app = document.getElementById("tracker-app")!;
+      const GIST_ID = app.dataset.gistId!;
+      const GIST_FILENAME = app.dataset.gistFilename!;
+      const TOTAL_ITEMS = Number(app.dataset.total || 27);
+      const TOKEN_KEY = "goals_2027_github_pat";
+
+      // State: Record<string, boolean> e.g. { "1": true, "2": false }
+      let completedMap: Record<string, boolean> = {};
+      let currentFilter: "all" | "remaining" | "completed" = "all";
+      let isSaving = false;
+
+      // DOM Refs
+      const syncDot = document.getElementById("sync-dot")!;
+      const syncLabel = document.getElementById("sync-label")!;
+      const authBtn = document.getElementById("auth-btn")!;
+      const tokenDrawer = document.getElementById("token-drawer")!;
+      const patInput = document.getElementById("pat-input") as HTMLInputElement;
+      const saveTokenBtn = document.getElementById("save-token-btn")!;
+      const cancelTokenBtn = document.getElementById("cancel-token-btn")!;
+      const overallCount = document.getElementById("overall-count")!;
+      const overallBar = document.getElementById("overall-bar")!;
+      const modeHint = document.getElementById("mode-hint")!;
+
+      function getToken(): string | null {
+        return localStorage.getItem(TOKEN_KEY);
+      }
+
+      function setStatus(state: "loading" | "synced" | "saving" | "error" | "unconfigured", text: string) {
+        syncLabel.textContent = text;
+        syncDot.className = "h-2 w-2 rounded-full";
+        if (state === "synced") syncDot.classList.add("bg-emerald-500");
+        else if (state === "saving" || state === "loading") syncDot.classList.add("bg-amber-400", "animate-pulse");
+        else if (state === "error") syncDot.classList.add("bg-rose-500");
+        else syncDot.classList.add("bg-zinc-400");
+      }
+
+      function updateAuthUI() {
+        const hasToken = Boolean(getToken());
+        const checkboxes = document.querySelectorAll<HTMLInputElement>("[data-goal-checkbox]");
+        checkboxes.forEach((cb) => {
+          cb.disabled = !hasToken;
+        });
+
+        if (hasToken) {
+          authBtn.textContent = "Lock (Sign Out)";
+          modeHint.textContent = "Edit mode active (syncs to Gist)";
+        } else {
+          authBtn.textContent = "Unlock to Edit";
+          modeHint.textContent = "Read-only mode";
+        }
+      }
+
+      function renderState() {
+        let completedTotal = 0;
+        const catTotals: Record<string, { done: number; total: number }> = {};
+
+        document.querySelectorAll<HTMLLIElement>(".goal-row").forEach((row) => {
+          const id = row.dataset.itemId!;
+          const catId = row.dataset.catId!;
+          const isDone = Boolean(completedMap[id]);
+
+          if (!catTotals[catId]) catTotals[catId] = { done: 0, total: 0 };
+          catTotals[catId].total += 1;
+          if (isDone) {
+            completedTotal += 1;
+            catTotals[catId].done += 1;
+          }
+
+          const cb = row.querySelector<HTMLInputElement>("[data-goal-checkbox]")!;
+          const title = row.querySelector<HTMLElement>(".goal-title")!;
+          cb.checked = isDone;
+
+          if (isDone) {
+            title.classList.add("line-through", "text-zinc-400", "dark:text-zinc-500");
+          } else {
+            title.classList.remove("line-through", "text-zinc-400", "dark:text-zinc-500");
+          }
+
+          // Filter visibility
+          const matchesFilter =
+            currentFilter === "all" ||
+            (currentFilter === "completed" && isDone) ||
+            (currentFilter === "remaining" && !isDone);
+          row.classList.toggle("hidden", !matchesFilter);
+        });
+
+        // Update category counters & hide empty sections when filtering
+        Object.entries(catTotals).forEach(([catId, counts]) => {
+          const badge = document.querySelector(`[data-cat-progress="${catId}"]`);
+          if (badge) badge.textContent = `${counts.done}/${counts.total}`;
+
+          const section = document.querySelector<HTMLElement>(`[data-category="${catId}"]`);
+          if (section) {
+            const visibleRows = section.querySelectorAll(".goal-row:not(.hidden)").length;
+            section.classList.toggle("hidden", visibleRows === 0);
+          }
+        });
+
+        // Overall progress bar
+        const pct = Math.round((completedTotal / TOTAL_ITEMS) * 100);
+        overallCount.textContent = `${completedTotal} / ${TOTAL_ITEMS} (${pct}%)`;
+        overallBar.style.width = `${pct}%`;
+      }
+
+      async function loadFromGist() {
+        if (!GIST_ID || GIST_ID === "YOUR_GITHUB_GIST_ID_HERE") {
+          setStatus("unconfigured", "Gist ID not set");
+          renderState();
+          return;
+        }
+
+        setStatus("loading", "Fetching...");
+        try {
+          const headers: Record<string, string> = {
+            Accept: "application/vnd.github+json"
+          };
+          const token = getToken();
+          if (token) headers.Authorization = `Bearer ${token}`;
+
+          // Cache-bust query param ensures fresh state across devices
+          const res = await fetch(`https://api.github.com/gists/${GIST_ID}?t=${Date.now()}`, { headers });
+          if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+
+          const data = await res.json();
+          const file = data.files?.[GIST_FILENAME];
+          if (file?.content) {
+            completedMap = JSON.parse(file.content);
+          }
+          setStatus("synced", "Synced");
+        } catch (err) {
+          console.error(err);
+          setStatus("error", "Sync error");
+        } finally {
+          renderState();
+        }
+      }
+
+      async function saveToGist() {
+        const token = getToken();
+        if (!token || !GIST_ID || GIST_ID === "YOUR_GITHUB_GIST_ID_HERE") return;
+
+        isSaving = true;
+        setStatus("saving", "Saving...");
+        try {
+          const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+            method: "PATCH",
+            headers: {
+              Accept: "application/vnd.github+json",
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              files: {
+                [GIST_FILENAME]: {
+                  content: JSON.stringify(completedMap, null, 2)
+                }
+              }
+            })
+          });
+
+          if (!res.ok) throw new Error(`Save failed: ${res.status}`);
+          setStatus("synced", "Saved to Gist");
+        } catch (err) {
+          console.error(err);
+          setStatus("error", "Save failed (check token)");
+        } finally {
+          isSaving = false;
+        }
+      }
+
+      // Event Listeners: Checkboxes
+      document.querySelectorAll<HTMLInputElement>("[data-goal-checkbox]").forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const id = cb.dataset.goalCheckbox!;
+          completedMap[id] = cb.checked;
+          renderState();
+          saveToGist();
+        });
+      });
+
+      // Event Listeners: Auth Drawer
+      authBtn.addEventListener("click", () => {
+        if (getToken()) {
+          localStorage.removeItem(TOKEN_KEY);
+          updateAuthUI();
+        } else {
+          tokenDrawer.classList.remove("hidden");
+          patInput.focus();
+        }
+      });
+
+      saveTokenBtn.addEventListener("click", () => {
+        const val = patInput.value.trim();
+        if (!val) return;
+        localStorage.setItem(TOKEN_KEY, val);
+        patInput.value = "";
+        tokenDrawer.classList.add("hidden");
+        updateAuthUI();
+        loadFromGist();
+      });
+
+      cancelTokenBtn.addEventListener("click", () => {
+        patInput.value = "";
+        tokenDrawer.classList.add("hidden");
+      });
+
+      // Event Listeners: Filter Tabs
+      document.querySelectorAll<HTMLButtonElement>(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentFilter = btn.dataset.filter as "all" | "remaining" | "completed";
+          document.querySelectorAll(".filter-btn").forEach((b) => {
+            b.className =
+              "filter-btn rounded-md px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800";
+          });
+          btn.className =
+            "filter-btn active rounded-md bg-zinc-900 px-2.5 py-1 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900";
+          renderState();
+        });
+      });
+
+      // Initialize
+      updateAuthUI();
+      loadFromGist();
+    </script>
+  </body>
+</html>
