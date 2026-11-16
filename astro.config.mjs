@@ -24,4 +24,5 @@ export default defineConfig({
   	sitemap({
     filter: (page) => !page.endsWith("/2027/"),
   }),
+  ],
 });
