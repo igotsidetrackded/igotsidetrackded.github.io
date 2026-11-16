@@ -6,7 +6,7 @@
     "node": ">=22.23.4"
   },
   "scripts": {
-    "dev": "astro dev --host 0.0.0.0 --port 3000",
+    "dev": "NODE_OPTIONS='--require ./scripts/node-version-shim.cjs' astro dev --host 0.0.0.0 --port 3000",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0 --port 3000",
     "astro": "astro",
